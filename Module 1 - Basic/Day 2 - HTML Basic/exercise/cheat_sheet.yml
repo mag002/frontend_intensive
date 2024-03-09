@@ -1,0 +1,16 @@
+- what is html,css,js
+- The a: email / phone / link
+- Basic structure HTML:
+    - DOCTYPE: dinh nghia phien ban <!DOCTYPE html> = HTML 5
+    - html > head > title: dat title cho tab cua webpage
+            > body: Noi dung trang web, nhung gi muon hien thi thi nam trong body
+- The p: dung de danh dau doan van ban
+- HTML khong phai ngon ngu lap trinh (only JS is programming language)
+- img: src: source, alt: alternative (Noi dung thay the khi ko load duoc anh)
+- media: 
+- heading 1 -> 6: <h1></h1>
+
+2 page to read w3schools, MDN mozilla
+Cach dung VSCode
+Cach tai file o Github
+
