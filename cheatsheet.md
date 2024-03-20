@@ -74,3 +74,61 @@
 - **margin:** Sets the space around elements.
 
 ---
+
+## CSS: Floats and Clearing
+- **`float`**: Allows an element to be pushed to the left or right, letting other elements flow around it.
+- **`clear`**: Clears floats on the left, right, or both sides of an element.
+
+## CSS: Padding vs. Margin
+- **`padding`**: Space between an element's border and its content. Does not collapse.
+- **`margin`**: Space between two elements, measured from borders outward. Can collapse.
+
+## CSS: Backgrounds
+- **Gradients**: Create a gradient background with `linear-gradient` or `radial-gradient`.
+- **Size and Repeat**: Control the scaling and repetition of the background image with `background-size` and `background-repeat`.
+- **Position**: Specify the starting position of the background image with `background-position`.
+- **Shorthand**: Combine multiple background properties with the `background` shorthand.
+- **Attachment**: Set the background as fixed relative to the viewport with `background-attachment`.
+
+## CSS: Box-Sizing
+- **`border-box`**: Width and height include padding and border.
+- **`content-box`**: Width and height apply only to the content.
+
+## CSS: Display Property
+- **`block`**: Element takes up the full width, regardless of content.
+- **`inline`**: Element takes up only as much width as its content.
+- **`inline-block`**: Elements flow like inline elements but retain block features.
+
+## CSS: Viewport Units
+- **`vw` (viewport width)**: 1% of the viewport's width.
+- **`vh` (viewport height)**: 1% of the viewport's height.
+
+## Git: Stash Command
+- **`git stash`**: Temporarily shelves changes made to your working copy.
+
+---
+
+## Icons in Web Design
+- Icons can be added as:
+  - **Images**: Standard image files like PNG or JPG.
+  - **SVG**: Scalable Vector Graphics for high-quality, scalable icons.
+  - **External Icon Libraries**: Utilize libraries like FontAwesome for a wide range of icons.
+
+## CSS Flexbox
+- **`display: flex;`**: Establishes a flex container.
+- **`flex-wrap: wrap | nowrap;`**: Controls whether the flex items are forced onto one line or can wrap onto multiple lines.
+- **`flex-direction: row | row-reverse | column | column-reverse;`**: Defines the direction flex items are placed in the flex container.
+- **`gap: <unit>;`**: Sets the gap between flex items.
+- **`justify-content: ...;`**: Aligns flex items along the main axis (horizontal by default).
+- **`align-items: ...;`**: Aligns flex items along the cross axis (vertical by default).
+
+### Note on Flex Containers
+- A flex container can also be a flex item within another flex container (nested flex).
+
+## Flex Item Properties
+- **`flex-shrink`**: Defines the ratio of how much the flex item will shrink relative to the rest of the flex items.
+- **`flex-grow`**: Defines the ratio of how much the flex item will grow relative to the rest of the flex items.
+- **`flex-basis`**: Specifies the initial length of a flex item.
+- **`order`**: Controls the order in which a flex item appears in the flex container.
+- **`align-self`**: Allows the default alignment (or the one specified by `align-items`) to be overridden for individual flex items.
+- **`flex`**: A shorthand for `flex-grow`, `flex-shrink`, and `flex-basis` combined.
