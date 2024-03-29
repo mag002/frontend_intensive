@@ -1,0 +1,39 @@
+/* Common Component, used in multiple pages */
+/* index.html - Sidebar*/
+.sidebar {
+    padding-left: 150px;
+}
+
+.sidebar>img {
+    margin-bottom: 26px;
+}
+
+.rounded-image-small {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.icon-small {
+    height: 18px;
+    width: 18px;
+}
+
+.icon-medium {
+    height: 20px;
+    width: 20px;
+}
+
+.icon-large {
+    height: 24px;
+    width: 24px;
+}
+
+.primary-button {
+    background-color: #150AA1;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    padding: 9px 12px;
+    border: 0px;
+}

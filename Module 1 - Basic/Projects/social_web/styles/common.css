@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.b-radius-4 {
+    border-radius: 4px;
+}
+
+.b-radius-8 {
+    border-radius: 8px;
+}
+
+.bg-primary {
+    background-color: #5858FA;
+}
+
+.bg-secondary {
+    background-color: #150AA1;
+}
+
+.color-primary {
+    color: #5858FA
+}
+
+.color-secondary {
+    color: #150AA1
+}
+
+.color-white {
+    color: white;
+}
+
+
+.stroke-grey {
+    border: 1px solid #D9D9D9;
+}
+
+.stroke-white {
+    border: 1px solid white;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-semi-bold {
+    font-weight: 600;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.p-0 {
+    padding: 0px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.ml-18 {
+    margin-left: 18px;
+}
+
+.text-grey-100 {
+    color: #A9A9A9
+}
+
+.text-grey-500 {
+    color: #686868
+}
+
+/* index.html - Sidebar*/
+.sidebar {
+    padding-left: 150px;
+}
+
+.sidebar>img {
+    margin-bottom: 26px;
+}
+
+.rounded-image-small {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.icon-small {
+    height: 18px;
+    width: 18px;
+}
+
+.icon-medium {
+    height: 20px;
+    width: 20px;
+}
+
+.icon-large {
+    height: 24px;
+    width: 24px;
+}
+
+.primary-button {
+    background-color: #150AA1;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    padding: 9px 12px;
+    border: 0px;
+}
