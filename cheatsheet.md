@@ -132,3 +132,68 @@
 - **`order`**: Controls the order in which a flex item appears in the flex container.
 - **`align-self`**: Allows the default alignment (or the one specified by `align-items`) to be overridden for individual flex items.
 - **`flex`**: A shorthand for `flex-grow`, `flex-shrink`, and `flex-basis` combined.
+
+# JavaScript DOM Cheat Sheet
+
+## Understanding the DOM
+- **DOM:** Document Object Model, a tree-like structure that represents the webpage in the browser.
+- **Tree Structure:** Every element is a node and can be a parent, child, or sibling to another node.
+
+## Selecting Elements
+- **getElementById:** Selects a single element by its ID.
+  ```javascript
+  document.getElementById('id');
+  ```
+- **getElementsByTagName:** Selects all elements of a specified tag name.
+  ```javascript
+  document.getElementsByTagName('tag');
+  ```
+- **getElementsByClassName:** Selects all elements with a specified class name.
+  ```javascript
+  document.getElementsByClassName('class');
+  ```
+- **querySelector:** Selects the first element that matches a specified CSS selector.
+  ```javascript
+  document.querySelector('.class');
+  ```
+- **querySelectorAll:** Selects all elements that match a specified CSS selector.
+  ```javascript
+  document.querySelectorAll('div.myClass');
+  ```
+## Manipulating the DOM
+- **textContent:** Sets or returns the text content of an element.
+  ```javascript
+  element.textContent = 'New text';
+  ```
+- **innerHTML:** Sets or returns the HTML content of an element.
+  ```javascript
+  element.innerHTML = '<span>New HTML content</span>';
+  ```
+- **style:** Changes the inline style of an element.
+  ```javascript
+  element.style.color = 'blue';
+  ```
+- **createElement:** Creates a new element node.
+  ```javascript
+  var newDiv = document.createElement('div');
+  ```
+- **appendChild:** Adds a new child node to an element as the last child node.
+  ```javascript
+  parentElement.appendChild(newDiv);
+  ```
+- **insertBefore:** Inserts a new node before a specified existing child node.
+  ```javascript
+  parentElement.insertBefore(newDiv, existingChild);
+  ```
+## Event Handling
+- **addEventListener:** Attaches an event handler to an element.
+  ```javascript
+  element.addEventListener('click', function() {
+    // code to execute on click
+  });
+  ```
+- **Event Types:** 'click', 'mouseenter', 'mouseleave', 'submit', 'load', 'resize', etc.
+- **Removing Event Listeners:**
+  ```javascript
+  element.removeEventListener('click', functionName);
+  ```
