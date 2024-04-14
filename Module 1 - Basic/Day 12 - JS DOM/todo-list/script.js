@@ -7,6 +7,8 @@
 var addTaskBtn = document.getElementById("add-task-btn");
 var taskList = document.getElementById("task-list");
 var inputHTML = document.getElementById("new-task")
+var form = document.querySelector("form")
+var checkAll = document.getElementById("check-all")
 
 
 /**
@@ -20,12 +22,28 @@ var inputHTML = document.getElementById("new-task")
 function addNewTodoItem(newItemContent) {
     var newLiHTML = document.createElement("li");
     newLiHTML.textContent = newItemContent;
-    newLiHTML.addEventListener("click", function () {
-        //  toggle done status for each li item (change element style)
+
+
+    // Pass by reference
+
+    // side effect
+
+    // closure
+    newLiHTML.addEventListener("click", function (event) {
+        var currentElement = event.target;
+        currentElement.classList.toggle("done");
 
     })
+
+
     // taskList.insertBefore()
-    taskList.appendChild(newLiHTML);
+    // if (empty or not)
+    if (taskList.textContent.trim() == "") { //if scope
+        taskList.appendChild(newLiHTML);
+    } else {
+        var firstItemInList = document.querySelector('ul>li');
+        taskList.insertBefore(newLiHTML, firstItemInList);
+    }
 }
 
 
@@ -33,9 +51,15 @@ function addNewTodoItem(newItemContent) {
  * Step 1: Add event listener for "click" event to button
  * Step 2: On that event trigger addNewTodoItem function with the parameter is user input
 */
-addTaskBtn.addEventListener("click", function () {
+form.addEventListener("click", function (event) {
+    event.preventDefault();
     var inputValue = inputHTML.value;
-    addNewTodoItem(inputValue);
+    if (inputValue.trim() == "") {
+        alert("Invalid input!")
+    } else {
+        addNewTodoItem(inputValue);
+    }
+    inputHTML.value = "";
 })
 
 
@@ -54,6 +78,7 @@ addTaskBtn.addEventListener("click", function () {
 - **Task Completion Check:**
   - Investigate the use of if/else statements to check whether tasks are marked as done and if the list is empty.
   - Explore the `insertBefore` method to add new items at the top of the task list.
+    // document.getElementById('parent').insertBefore(newDiv, currentDiv);)
 
 - **Task Interaction:**
   - Implement a way to toggle the 'done' status for each task, changing the element's style to `textDecoration: line-through`.
@@ -61,4 +86,30 @@ addTaskBtn.addEventListener("click", function () {
 - **Task Addition via Form Submission:**
   - Facilitate the addition of new tasks when the user presses 'Enter' in the input field, by handling the submit event on a form element.
 
+- Check All
+ * When I click on Check all, select all item (make a background become gray);
+ * When I click on Check all again, deselect all item (make a background become white);
+
+- Query checkbox
+- Add event on change for checkbox
+- if(checkbox value is checked){
+    make all li backgroud become grey
+    - Query all li
+    - for each li element, update style.background / class 
+}else{
+    make all li backgroud become white
+}
+
+// interaction with arr 
+
+// query through arr
+
 */
+
+
+
+
+checkAll.addEventListener("change", function (event) {
+    console.log(event.target.checked) // Apply for checkbox and radio button
+})
+

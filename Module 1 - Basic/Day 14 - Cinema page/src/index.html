@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Strange - In the Multiverse of Madness - Reservastion </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="date">
+            <div class="content-container">
+                <h1>
+                    <b>Doctor Strange</b> <br />
+                    In the Multiverse of Madness
+                </h1>
+                <p>
+                    Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across
+                    multiverses
+
+                    <span class="more">
+
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius repudiandae sequi eaque ut, nihil
+                        suscipit et molestias ipsam vel beatae.
+                    </span>
+                    <span class="three-dots">...</span>
+                    <span id="read-more">Read more</span>
+                    <span id="less">. Less</span>
+                </p>
+                <style>
+                    .more {
+                        display: none;
+                    }
+
+                    #less {
+                        display: none;
+                    }
+                </style>
+                <script>
+                    var moreText = document.querySelector('.more');
+                    var threeDots = document.querySelector('.three-dots');
+                    var readMoreButton = document.querySelector('#read-more');
+                    var lessButton = document.querySelector('#less');
+
+                    // readMoreButton.addEventListener('click', function (event) {
+                    //     moreText.style.display = 'inline';
+                    //     threeDots.style.display = 'none';
+                    //     readMoreButton.style.display = 'none';
+
+                    // })
+                    readMoreButton.onclick = function (event) {
+                        moreText.style.display = 'inline';
+                        threeDots.style.display = 'none';
+                        readMoreButton.style.display = 'none';
+                        lessButton.style.display = 'inline';
+
+                    }
+                    lessButton.onclick = function (event) {
+                        moreText.style.display = 'none';
+                        threeDots.style.display = 'inline';
+                        readMoreButton.style.display = 'inline';
+                        lessButton.style.display = 'none';
+
+                    }
+                </script>
+                <h3>
+                    Select Date and Time
+                </h3>
+                <div style="height:200px">
+                    Date time picker
+                </div>
+                <button id="reserve-button" class="primary-button">
+                    <div>
+                        reservation
+                    </div>
+                </button>
+
+            </div>
+
+        </div>
+        <div class="seat-container d-none">
+            <button id="back-button">
+                back </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

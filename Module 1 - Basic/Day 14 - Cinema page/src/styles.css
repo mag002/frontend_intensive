@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.container {
+    display: flex;
+
+}
+
+.date,
+.seat-container {
+    height: 100vh;
+    width: 100vw;
+    background: lightblue;
+}
+
+.date {
+    background-image: url(../assets/background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: black;
+    position: relative;
+}
+
+.seat-container {
+    background-color: lightcoral;
+}
+
+.d-none {
+    display: none;
+}
+
+
+.content-container {
+    background: linear-gradient(0deg, black 74%, #ff000000);
+    height: 65%;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    text-align: center;
+    padding: 0px 2.125rem;
+    padding-top: 7.1875rem;
+    padding-bottom: 3.125rem;
+}
+
+.content-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.content-container p {
+    margin-bottom: 3.1875rem;
+}
+
+.content-container h3 {
+    font-size: 1.5rem;
+}
+
+.primary-button {
+    padding: 3px;
+    border-radius: 33px;
+    background: linear-gradient(to right, #FF0A00 55%, #780300, #3B0002);
+    font-size: 1.125rem;
+    text-transform: capitalize;
+}
+
+.primary-button>div {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    border-radius: 33px;
+    padding: 13px 0px;
+    background: linear-gradient(330deg, #521212, #A10600);
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* from 1024px  */
+    .d-none {
+        display: initial;
+    }
+
+    #reserve-button,
+    #back-button {
+        display: none;
+    }
+}

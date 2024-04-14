@@ -58,8 +58,14 @@ h1 {
 #task-list li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
 
 #task-list li:last-child {
     border-bottom: none;
+}
+
+/* every single li html with "done" class inside of element with "task-list" id */
+#task-list li.done {
+    text-decoration: line-through;
 }
