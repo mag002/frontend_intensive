@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <div class="date">
+        <div class="date-container d-none">
             <div class="content-container">
                 <h1>
                     <b>Doctor Strange</b> <br />
@@ -29,47 +29,12 @@
                     <span id="read-more">Read more</span>
                     <span id="less">. Less</span>
                 </p>
-                <style>
-                    .more {
-                        display: none;
-                    }
 
-                    #less {
-                        display: none;
-                    }
-                </style>
-                <script>
-                    var moreText = document.querySelector('.more');
-                    var threeDots = document.querySelector('.three-dots');
-                    var readMoreButton = document.querySelector('#read-more');
-                    var lessButton = document.querySelector('#less');
-
-                    // readMoreButton.addEventListener('click', function (event) {
-                    //     moreText.style.display = 'inline';
-                    //     threeDots.style.display = 'none';
-                    //     readMoreButton.style.display = 'none';
-
-                    // })
-                    readMoreButton.onclick = function (event) {
-                        moreText.style.display = 'inline';
-                        threeDots.style.display = 'none';
-                        readMoreButton.style.display = 'none';
-                        lessButton.style.display = 'inline';
-
-                    }
-                    lessButton.onclick = function (event) {
-                        moreText.style.display = 'none';
-                        threeDots.style.display = 'inline';
-                        readMoreButton.style.display = 'inline';
-                        lessButton.style.display = 'none';
-
-                    }
-                </script>
                 <h3>
                     Select Date and Time
                 </h3>
-                <div style="height:200px">
-                    Date time picker
+                <div class="date-selection">
+
                 </div>
                 <button id="reserve-button" class="primary-button">
                     <div>
@@ -80,11 +45,562 @@
             </div>
 
         </div>
-        <div class="seat-container d-none">
-            <button id="back-button">
+        <div class="seat-container">
+            <nav>
+                nav
+            </nav>
+            <div>
+                <div>
+                    screen
+                </div>
+                <div class="seat-picker">
+                    <div id="seat-row-one" class="seat-row justify-around">
+                        <div class="seat-row">
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="seat-row">
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="seat-row-two" class="seat-row justify-between">
+                        <div class="seat-row">
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="seat-row">
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                            <div class="seat">
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                        fill="#D9D9D9"></path>
+                                    <path
+                                        d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                        fill="#D9D9D9"></path>
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="seat-row-three" class="seat-row">
+
+                    </div>
+                    <div id="seat-row-four" class="seat-row">
+
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="seat-row-five" class="seat-row">
+
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="seat-row-six" class="seat-row">
+
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9"></path>
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <script>
+                    var seatRows = document.querySelectorAll('.seat-row');
+                    for (var i = 0; i < seatRows.length; i++) {
+                        console.log('seatRorw', seatRows[i])
+                        generateNineSeat(seatRows[i])
+                    }
+
+                    function generateNineSeat(seatRow) {
+                        for (var j = 0; j < 9; j++) {
+                            seatRow.innerHTML = seatRow.innerHTML + `
+                        <div class="seat">
+                            <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 4C0 2.89543 0.89543 2 2 2H4C5.10457 2 6 2.89543 6 4V14C6 15.1046 6.89543 16 8 16H22C23.1046 16 24 15.1046 24 14V4C24 2.89543 24.8954 2 26 2H28C29.1046 2 30 2.89543 30 4V17C30 19.7614 27.7614 22 25 22H5C2.23858 22 0 19.7614 0 17V4Z"
+                                    fill="#D9D9D9" />
+                                <path
+                                    d="M7 3C7 1.34315 8.34315 0 10 0H20C21.6569 0 23 1.34315 23 3V14C23 14.5523 22.5523 15 22 15H8C7.44772 15 7 14.5523 7 14V3Z"
+                                    fill="#D9D9D9" />
+                            </svg>
+                        </div>
+                        `
+
+                        }
+                    }
+                </script> -->
+            </div>
+            <button id="back-button" data-test="example test">
                 back </button>
         </div>
     </div>
+    <script src="data/seat_data.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -15,14 +15,14 @@ button {
 
 }
 
-.date,
+.date-container,
 .seat-container {
     height: 100vh;
     width: 100vw;
     background: lightblue;
 }
 
-.date {
+.date-container {
     background-image: url(../assets/background.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -32,6 +32,7 @@ button {
 
 .seat-container {
     background-color: lightcoral;
+    padding: 2.5rem;
 }
 
 .d-none {
@@ -42,6 +43,7 @@ button {
 .content-container {
     background: linear-gradient(0deg, black 74%, #ff000000);
     height: 65%;
+    width: 100vw;
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -49,9 +51,7 @@ button {
     bottom: 0px;
     left: 0;
     text-align: center;
-    padding: 0px 2.125rem;
-    padding-top: 7.1875rem;
-    padding-bottom: 3.125rem;
+    padding: 3.125rem 2.125rem;
 }
 
 .content-container h1 {
@@ -84,6 +84,110 @@ button {
     border-radius: 33px;
     padding: 13px 0px;
     background: linear-gradient(330deg, #521212, #A10600);
+}
+
+.more {
+    display: none;
+}
+
+#less {
+    display: none;
+}
+
+.date-selection {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0px;
+    align-items: flex-end;
+    margin-bottom: 1.875rem;
+    margin-top: 1.25rem;
+}
+
+.date-selection .date {
+    width: 3.75rem;
+    height: 4.375rem;
+    background: linear-gradient(to right, #FF0A00, #2C0000);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    padding: 1px;
+}
+
+.date-selection .date>div {
+    border-radius: 6px;
+    background-color: #2C0000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.date-selection .time {
+    width: 3.75rem;
+    height: 2.125rem;
+    background: linear-gradient(to right, #FF0A00, #2C0000);
+    border-radius: 6px;
+    padding: 1px;
+}
+
+.date-selection .time>div {
+    border-radius: 6px;
+    background-color: #2C0000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-selection .date.active>div {
+    background: linear-gradient(330deg, #521212, #A10600);
+}
+
+.date-selection>div:nth-child(2),
+.date-selection>div:nth-child(4) {
+    margin-bottom: 20px;
+}
+
+.date-selection>div:nth-child(3) {
+    margin-bottom: 40px;
+}
+
+.seat-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.seat-row>.seat-row {
+    margin-bottom: 0px;
+}
+
+.seat-picker>.seat-row:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+svg,
+path {
+    pointer-events: none;
+}
+
+.seat.unavailable path {
+    fill: #FF413C;
+}
+
+.seat.selected path {
+    fill: #00FFE0;
 }
 
 @media only screen and (min-width: 768px) {
