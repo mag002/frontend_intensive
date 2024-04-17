@@ -124,7 +124,7 @@ for (var i = 0; i < seat_row_three.length; i++) {
 
     seatRowThreeHTML.appendChild(seat)
 }
-
+// TEST
 function handleSeatClick(event) {
     event.target.classList.toggle('selected');
 }
