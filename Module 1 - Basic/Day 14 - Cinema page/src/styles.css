@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     color: white;
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 button {
@@ -31,7 +31,10 @@ button {
 }
 
 .seat-container {
-    background-color: lightcoral;
+    background-color: black;
+}
+
+.seat-container>div {
     padding: 2.5rem;
 }
 
@@ -94,13 +97,14 @@ button {
     display: none;
 }
 
-.date-selection {
+.date-selection>div {
     display: flex;
     gap: 20px;
     margin: 20px 0px;
     align-items: flex-end;
     margin-bottom: 1.875rem;
     margin-top: 1.25rem;
+    overflow: hidden;
 }
 
 .date-selection .date {
@@ -145,14 +149,15 @@ button {
     background: linear-gradient(330deg, #521212, #A10600);
 }
 
-.date-selection>div:nth-child(2),
-.date-selection>div:nth-child(4) {
+.date-selection.up-one {
     margin-bottom: 20px;
 }
 
-.date-selection>div:nth-child(3) {
+.date-selection.up-two {
+
     margin-bottom: 40px;
 }
+
 
 .seat-row {
     display: flex;
@@ -188,6 +193,84 @@ path {
 
 .seat.selected path {
     fill: #00FFE0;
+}
+
+.screen path {
+    filter: drop-shadow(2px 4px 8px red);
+}
+
+.screen {
+    margin-bottom: 3.5rem;
+}
+
+.circle {
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 100%;
+    background: white;
+}
+
+.circle.unavailable {
+    background: #FF413C;
+}
+
+.circle.selected {
+    background: #00FFE0;
+}
+
+.seat-note {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.seat-note>div {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-weight: 400;
+}
+
+.seat-selected-description {
+    background: linear-gradient(330deg, #521212, #A10600);
+    height: 25%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 0 !important;
+}
+
+.seat-selected-description>div:first-child {
+    width: 75%;
+}
+
+.seat-selected-description>div:last-child {
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.book-button-background {
+    border-radius: 100% 0 0 100%;
+    background: black;
+    width: 100%;
+    padding: 1rem;
+}
+
+.book-button-background button {
+    height: 4.1875rem;
+    width: 4.1875rem;
+    border-radius: 100%;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-button-background button:disabled {
+    background: grey;
 }
 
 @media only screen and (min-width: 768px) {
