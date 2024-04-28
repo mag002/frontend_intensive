@@ -10,6 +10,11 @@ button {
     outline: none;
 }
 
+#prev-button {
+    display: none !important;
+}
+
+
 .container {
     display: flex;
 
@@ -36,6 +41,8 @@ button {
 
 .seat-container>div {
     padding: 2.5rem;
+    padding-top: 0;
+    margin-top: 5rem;
 }
 
 .d-none {
@@ -46,7 +53,7 @@ button {
 .content-container {
     background: linear-gradient(0deg, black 74%, #ff000000);
     height: 65%;
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -97,14 +104,16 @@ button {
     display: none;
 }
 
-.date-selection>div {
+.date-selection {
     display: flex;
     gap: 20px;
     margin: 20px 0px;
     align-items: flex-end;
     margin-bottom: 1.875rem;
+    flex-shrink: 0;
     margin-top: 1.25rem;
-    overflow: hidden;
+    overflow: auto;
+    min-height: 160px;
 }
 
 .date-selection .date {
@@ -149,11 +158,15 @@ button {
     background: linear-gradient(330deg, #521212, #A10600);
 }
 
-.date-selection.up-one {
+.date-selection>div {
+    transition: 0.3s;
+}
+
+.date-selection>div.up-one {
     margin-bottom: 20px;
 }
 
-.date-selection.up-two {
+.date-selection>div.up-two {
 
     margin-bottom: 40px;
 }
@@ -195,12 +208,18 @@ path {
     fill: #00FFE0;
 }
 
-.screen path {
-    filter: drop-shadow(2px 4px 8px red);
+.screen svg {
+    filter: drop-shadow(3px 3px 10px red);
 }
 
 .screen {
     margin-bottom: 3.5rem;
+}
+
+hr {
+    opacity: 30%;
+    width: calc(100% - 3rem);
+    margin: auto;
 }
 
 .circle {
@@ -222,6 +241,7 @@ path {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 2.5rem;
 }
 
 .seat-note>div {
@@ -230,6 +250,7 @@ path {
     align-items: center;
     font-weight: 400;
 }
+
 
 .seat-selected-description {
     background: linear-gradient(330deg, #521212, #A10600);
@@ -240,10 +261,23 @@ path {
     width: 100%;
     display: flex;
     padding: 0 !important;
+    align-items: center;
 }
 
-.seat-selected-description>div:first-child {
+
+.selected-info {
     width: 75%;
+    padding-left: 2.5rem;
+}
+
+.selected-info>div {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.selected-info>div img {
+    max-width: 20px;
 }
 
 .seat-selected-description>div:last-child {
@@ -273,6 +307,69 @@ path {
     background: grey;
 }
 
+nav {
+    display: flex;
+    padding: 1.5rem;
+    justify-content: space-between;
+}
+
+nav h3 {
+    font-size: 1.125rem;
+}
+
+nav button {
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 100%;
+    padding: 1px;
+    background: linear-gradient(to right, #D40800 55%, #D4080000);
+
+}
+
+.date-container nav button {
+    background: linear-gradient(to right, #d408006b 55%, #D4080000);
+}
+
+.date-container nav button>div {
+    background: #c9c9c98f;
+}
+
+nav button>div {
+    background: grey;
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-d-none {
+    display: none;
+}
+
+.desktop-book-button {
+    display: none !important;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100vw;
+    min-height: 200px;
+}
+
+/* //
+    Mobile first => min => be toi lon ipad / desktop
+
+*/
+@media only screen and (min-width: 1024px) {}
+
 @media only screen and (min-width: 768px) {
 
     /* from 1024px  */
@@ -280,8 +377,87 @@ path {
         display: initial;
     }
 
+    .mobile-d-none {
+        display: block
+    }
+
     #reserve-button,
     #back-button {
         display: none;
     }
+
+    .seat-container {
+        position: relative;
+    }
+
+    .seat-selected-description {
+        position: absolute;
+    }
+
+    .date-container {
+        width: 27rem;
+        flex-shrink: 0;
+    }
+
+    .date-container nav {
+        display: none;
+    }
+
+    .content-container {
+        flex-direction: column-reverse;
+    }
+
+    .content-container h3 {
+        display: none;
+    }
+
+    #prev-button {
+        display: block !important;
+    }
+
+    .seat-container>div {
+        max-width: 25rem;
+        margin: 40px auto;
+        padding: 0;
+    }
+
+    .seat-selected-description {
+        width: 100%;
+        max-width: unset !important;
+        background: none;
+        flex-direction: column;
+    }
+
+    .selected-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-book-button {
+        display: none
+    }
+
+    .seat-selected-description button {
+        width: 22.5rem;
+    }
+
+    .seat-selected-description>div:last-child {
+        width: unset;
+    }
+
+    .desktop-book-button {
+        display: block !important;
+    }
 }
+
+
+/* LAM TIEP
+- Ipad screen: tu lam
+- Checkout: Ticket animation
+- watch Trailer / open youtube video
+- Modal/popup
+
+
+*/

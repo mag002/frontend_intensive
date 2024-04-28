@@ -16,25 +16,42 @@
 <body>
     <div class="container">
         <div class="date-container">
+            <nav>
+                <button id="back-home-button" data-test="example test">
+                    <div>
+                        <img src="../assets/back.svg" alt="">
+                    </div>
+                </button>
+
+                <button>
+                    <div>
+                        <img src="../assets/3dots.svg" alt="">
+                    </div>
+                </button>
+
+            </nav>
             <div class="content-container">
-                <h1>
-                    <b>Doctor Strange</b> <br />
-                    In the Multiverse of Madness
-                </h1>
-                <p>
-                    Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across
-                    multiverses
+                <div>
+                    <h1>
+                        <b>Doctor Strange</b> <br />
+                        In the Multiverse of Madness
+                    </h1>
+                    <p>
+                        Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across
+                        multiverses
 
-                    <span class="more">
+                        <span class="more">
 
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius repudiandae sequi eaque ut, nihil
-                        suscipit et molestias ipsam vel beatae.
-                    </span>
-                    <span class="three-dots">...</span>
-                    <span id="read-more">Read more</span>
-                    <span id="less">. Less</span>
-                </p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius repudiandae sequi eaque ut,
+                            nihil
+                            suscipit et molestias ipsam vel beatae.
+                        </span>
+                        <span class="three-dots">...</span>
+                        <span id="read-more">Read more</span>
+                        <span id="less">. Less</span>
+                    </p>
 
+                </div>
                 <h3>
                     Select Date and Time
                 </h3>
@@ -55,7 +72,23 @@
         <div class="seat-container  d-none">
             <nav>
                 <button id="back-button" data-test="example test">
-                    back </button>
+                    <div>
+                        <img src="../assets/back.svg" alt="">
+                    </div>
+                </button>
+                <button id="prev-button " class="d-none" data-test="example test">
+                    <div>
+                        <img src="../assets/back.svg" alt="">
+                    </div>
+                </button>
+
+                <h3>Choose your seats</h3>
+                <button>
+                    <div>
+                        <img src="../assets/date.svg" alt="">
+                    </div>
+                </button>
+
             </nav>
             <div>
                 <div class="screen">
@@ -124,20 +157,53 @@
                     }
                 </script> -->
             </div>
+            <hr class="mobile-d-none">
+
             <div class="seat-selected-description">
-                <div>
-                    <p id="selected-seats-name"></p>
-                    <p id="total-price"></p>
+                <div class="selected-info">
+                    <div>
+                        <img src="../assets/date.svg" alt="">
+                        <p>
+                            June 21st, 2023 &#x2022; 6 p.m.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="../assets/seat.svg" alt="">
+
+                        <p id="selected-seats-name">
+                            Please select a seat
+                            <!-- VIP Section &#x2022; Seats 5-7 -->
+                        </p>
+                    </div>
+                    <div>
+                        <img src="../assets/ion_cart.svg" alt="">
+
+                        <p>
+                            Total: $<span id="total-price">0</span>
+                        </p>
+                    </div>
                 </div>
-                <div>
+                <div class="mobile-book-button">
                     <div class="book-button-background">
                         <button disabled id="buy-button">
                             Buy
                         </button>
                     </div>
                 </div>
+                <div class="desktop-book-button">
+                    <button id="buy-button" class="primary-button">
+                        <div>Buy</div>
+                    </button>
+                </div>
             </div>
 
+        </div>
+    </div>
+    <div class="modal">
+        <h3>Are you sure</h3>
+        <div>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">Cancel</button>
         </div>
     </div>
     <script src="data/seat_data.js"></script>

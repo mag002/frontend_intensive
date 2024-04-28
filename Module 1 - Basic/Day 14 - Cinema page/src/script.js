@@ -25,6 +25,9 @@ var seatRowSixHTML = document.querySelector("#seat-row-six");
 var seatSelectedNameHTML = document.getElementById('selected-seats-name');
 var totalPriceHTML = document.getElementById('total-price');
 var buyButton = document.getElementById('buy-button');
+var modalHTML = document.querySelector('.modal');
+var yesButtonHTML = document.querySelector('.modal #yes-button');
+var noButtonHTML = document.querySelector('.modal #no-button');
 
 reserveButton.addEventListener("click", function () {
     dateScreen.classList.add('d-none');
@@ -32,10 +35,32 @@ reserveButton.addEventListener("click", function () {
 })
 
 backButton.addEventListener("click", function (event) {
+    if (selectedSeats.length) {
+        modalHTML.style.display = 'block'
+    } else {
+        handleBackToDateSelection();
+    }
+})
+yesButtonHTML.addEventListener("click", handleBackToDateSelection);
+noButtonHTML.addEventListener("click", function () {
+    modalHTML.style.display = 'none'
+
+});
+
+function handleBackToDateSelection() {
     dateScreen.classList.remove('d-none');
     seatScreen.classList.add('d-none');
     console.log('Log:', event.target.dataset.test)
-})
+    var selectSeatsHTML = document.querySelectorAll('.selected');
+    for (var i = 0; i < selectSeatsHTML.length; i++) {
+        selectSeatsHTML[i].classList.remove('selected')
+    }
+    selectedSeats = [];
+
+    generateSeatNameAndPrice();
+    modalHTML.style.display = 'none'
+
+}
 
 
 
@@ -99,8 +124,12 @@ for (var i = 0; i < slots.length; i++) {
     dateContainer.draggable = "true"
     var date = document.createElement('div');
     date.innerHTML = slots[i].date;
+    if (i == 1 || i == 3) {
+        slotContainer.classList.add('up-one')
+    }
     if (i == 2) {
         dateContainer.classList.add('active')
+        slotContainer.classList.add('up-two')
     }
     var timeContainer = document.createElement('div');
     timeContainer.classList.add('time');
@@ -112,7 +141,7 @@ for (var i = 0; i < slots.length; i++) {
     dateContainer.appendChild(date);
     timeContainer.appendChild(time);
 
-    document.querySelector('.date-selection>div').appendChild(slotContainer)
+    dateSelection.appendChild(slotContainer)
 }
 
 
@@ -150,12 +179,20 @@ function generateSeatNameAndPrice() {
     seatSelectedNameHTML.innerHTML = "";
     totalPriceHTML.innerHTML = "";
     console.log('selectedSeats', selectedSeats)
+    if (selectedSeats.length === 0) {
+        seatSelectedNameHTML.innerHTML = 'Please select a seat';
+        totalPriceHTML.innerHTML = '0';
+        return
+    }
     for (var i = 0; i < selectedSeats.length; i++) {
         var currentSeat = selectedSeats[i];
         seatSelectedNameHTML.innerHTML = seatSelectedNameHTML.innerHTML + currentSeat.id
         totalPriceHTML.innerHTML = +totalPriceHTML.innerHTML + +currentSeat.price;
 
     }
+    // Add more logic to generate the selected seat name follow the pattern
+    // If the number is continuous, add dash between start number and end number
+    // if not, use ','
 }
 function updateBuyButtonStatus() {
     if (selectedSeats.length !== 0) {
@@ -167,7 +204,7 @@ function updateBuyButtonStatus() {
 
 function handleSeatClick(event) {
     var available = event.target.dataset.available;
-    var id = event.target.dataset.id;
+    var id = event.target.dataset.id; // id cua ghe dang chon
     var isVip = event.target.dataset.isVip;
     var price = event.target.dataset.price;
     console.log(typeof available)
@@ -176,12 +213,15 @@ function handleSeatClick(event) {
 
         if (event.target.classList.value.includes('selected')) {
             event.target.classList.remove('selected');
-
-            // Hint: Require
-            // find item in array by id
-            // delete item in array by index
-            selectedSeats = [];
-
+            var index = -1;
+            for (var i = 0; i < selectedSeats.length; i++) {
+                if (selectedSeats[i].id === id) {
+                    index = i;
+                }
+            }
+            if (index > -1) {
+                selectedSeats.splice(index, 1)
+            }
         } else {
             event.target.classList.add('selected');
             var newSeat = {
@@ -254,30 +294,50 @@ generateSeats(seat_row_four, seatRowFourHTML)
 generateSeats(seat_row_five, seatRowFiveHTML)
 generateSeats(seat_row_six, seatRowSixHTML)
 
-
-
-
-
-
-
-var date = document.querySelectorAll('.date-selection>div');
-for (var i = 0; i < date.length; i++) {
-    var item = date[i];
-    item.addEventListener("dragstart", function (event) {
-        // The dataTransfer.setData() method sets the data type and the value of the dragged data
-        console.log("START!!!!", event.target)
-    });
-
-    // While dragging the p element, change the color of the output text
-    item.addEventListener("drag", function (event) {
-        console.log("DRAG!!!!", event.clientX)
-
-    });
-
-    // Output some text when finished dragging the p element and reset the opacity
-    item.addEventListener("dragend", function (event) {
-        console.log("END!!!!", event.target)
-
-    });
-
+var dates = document.querySelectorAll('.date-selection>div');
+function clearClass() {
+    for (var i = 0; i < dates.length; i++) {
+        dates[i].classList = ""
+    }
 }
+
+
+
+
+// var date = document.querySelectorAll('.date-selection>div');
+// for (var i = 0; i < date.length; i++) {
+//     var item = date[i];
+//     item.addEventListener("dragstart", function (event) {
+//         // The dataTransfer.setData() method sets the data type and the value of the dragged data
+//         console.log("START!!!!", event.target)
+//     });
+
+//     // While dragging the p element, change the color of the output text
+//     item.addEventListener("drag", function (event) {
+//         console.log("DRAG!!!!", event.clientX)
+
+//     });
+
+//     // Output some text when finished dragging the p element and reset the opacity
+//     item.addEventListener("dragend", function (event) {
+//         console.log("END!!!!", event.target)
+
+//     });
+
+// }
+dateSelection.addEventListener('scroll', function (e) {
+    clearClass()
+    var itemWidth = 75;
+    currentItem = Math.floor(e.target.scrollLeft / itemWidth)
+
+    upOne = currentItem + 1
+    upOneAnother = currentItem + 3
+
+    upTwo = currentItem + 2
+    dates[upOne].classList.add('up-one')
+    dates[upOneAnother].classList.add('up-one')
+    dates[upTwo].classList.add('up-two')
+
+    console.log(event.target.scrollLeft)
+
+})
