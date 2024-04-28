@@ -96,11 +96,14 @@ for (var i = 0; i < slots.length; i++) {
     var slotContainer = document.createElement('div');
     var dateContainer = document.createElement('div');
     dateContainer.classList.add('date');
-    dateContainer.draggable = "true"
     var date = document.createElement('div');
     date.innerHTML = slots[i].date;
+    if (i == 1 || i == 3) {
+        slotContainer.classList.add('up-one')
+    }
     if (i == 2) {
         dateContainer.classList.add('active')
+        slotContainer.classList.add('up-two')
     }
     var timeContainer = document.createElement('div');
     timeContainer.classList.add('time');
@@ -112,7 +115,7 @@ for (var i = 0; i < slots.length; i++) {
     dateContainer.appendChild(date);
     timeContainer.appendChild(time);
 
-    document.querySelector('.date-selection>div').appendChild(slotContainer)
+    dateSelection.appendChild(slotContainer)
 }
 
 
@@ -254,30 +257,29 @@ generateSeats(seat_row_four, seatRowFourHTML)
 generateSeats(seat_row_five, seatRowFiveHTML)
 generateSeats(seat_row_six, seatRowSixHTML)
 
-
-
-
-
-
-
-var date = document.querySelectorAll('.date-selection>div');
-for (var i = 0; i < date.length; i++) {
-    var item = date[i];
-    item.addEventListener("dragstart", function (event) {
-        // The dataTransfer.setData() method sets the data type and the value of the dragged data
-        console.log("START!!!!", event.target)
-    });
-
-    // While dragging the p element, change the color of the output text
-    item.addEventListener("drag", function (event) {
-        console.log("DRAG!!!!", event.clientX)
-
-    });
-
-    // Output some text when finished dragging the p element and reset the opacity
-    item.addEventListener("dragend", function (event) {
-        console.log("END!!!!", event.target)
-
-    });
-
+var dates = document.querySelectorAll('.date-selection>div');
+function clearClass() {
+    for (var i = 0; i < dates.length; i++) {
+        dates[i].classList = ""
+    }
 }
+dateSelection.addEventListener('scroll', function (e) {
+    clearClass()
+    var itemWidth = 75;
+    currentItem = Math.floor(e.target.scrollLeft / itemWidth)
+
+    upOne = currentItem + 1
+    upOneAnother = currentItem + 3
+
+    upTwo = currentItem + 2
+    dates[upOne].classList.add('up-one')
+    dates[upOneAnother].classList.add('up-one')
+    dates[upTwo].classList.add('up-two')
+
+    console.log(event.target.scrollLeft)
+
+})
+
+
+
+

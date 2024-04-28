@@ -16,6 +16,20 @@
 <body>
     <div class="container">
         <div class="date-container">
+            <nav>
+                <button id="back-home-button" data-test="example test">
+                    <div>
+                        <img src="../assets/back.svg" alt="">
+                    </div>
+                </button>
+
+                <button>
+                    <div>
+                        <img src="../assets/3dots.svg" alt="">
+                    </div>
+                </button>
+
+            </nav>
             <div class="content-container">
                 <h1>
                     <b>Doctor Strange</b> <br />
@@ -39,9 +53,7 @@
                     Select Date and Time
                 </h3>
                 <div class="date-selection">
-                    <div>
 
-                    </div>
                 </div>
                 <button id="reserve-button" class="primary-button">
                     <div>
@@ -55,8 +67,20 @@
         <div class="seat-container  d-none">
             <nav>
                 <button id="back-button" data-test="example test">
-                    back </button>
+                    <div>
+                        <img src="../assets/back.svg" alt="">
+                    </div>
+                </button>
+
+                <h3>Choose your seats</h3>
+                <button>
+                    <div>
+                        <img src="../assets/date.svg" alt="">
+                    </div>
+                </button>
+
             </nav>
+            <hr>
             <div>
                 <div class="screen">
                     <svg viewBox="0 0 336 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,9 +149,28 @@
                 </script> -->
             </div>
             <div class="seat-selected-description">
-                <div>
-                    <p id="selected-seats-name"></p>
-                    <p id="total-price"></p>
+                <div class="selected-info">
+                    <div>
+                        <img src="../assets/date.svg" alt="">
+                        <p>
+                            June 21st, 2023 &#x2022; 6 p.m.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="../assets/seat.svg" alt="">
+
+                        <p id="selected-seats-name">
+                            Please select a seat
+                            <!-- VIP Section &#x2022; Seats 5-7 -->
+                        </p>
+                    </div>
+                    <div>
+                        <img src="../assets/ion_cart.svg" alt="">
+
+                        <p>
+                            Total: $<span id="total-price">0</span>
+                        </p>
+                    </div>
                 </div>
                 <div>
                     <div class="book-button-background">
