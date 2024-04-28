@@ -121,6 +121,7 @@ for (var i = 0; i < slots.length; i++) {
     var slotContainer = document.createElement('div');
     var dateContainer = document.createElement('div');
     dateContainer.classList.add('date');
+    dateContainer.draggable = "true"
     var date = document.createElement('div');
     date.innerHTML = slots[i].date;
     if (i == 1 || i == 3) {
@@ -299,7 +300,6 @@ function clearClass() {
         dates[i].classList = ""
     }
 }
-
 
 
 
