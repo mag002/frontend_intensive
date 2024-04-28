@@ -31,29 +31,34 @@
 
             </nav>
             <div class="content-container">
-                <h1>
-                    <b>Doctor Strange</b> <br />
-                    In the Multiverse of Madness
-                </h1>
-                <p>
-                    Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across
-                    multiverses
+                <div>
+                    <h1>
+                        <b>Doctor Strange</b> <br />
+                        In the Multiverse of Madness
+                    </h1>
+                    <p>
+                        Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across
+                        multiverses
 
-                    <span class="more">
+                        <span class="more">
 
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius repudiandae sequi eaque ut, nihil
-                        suscipit et molestias ipsam vel beatae.
-                    </span>
-                    <span class="three-dots">...</span>
-                    <span id="read-more">Read more</span>
-                    <span id="less">. Less</span>
-                </p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius repudiandae sequi eaque ut,
+                            nihil
+                            suscipit et molestias ipsam vel beatae.
+                        </span>
+                        <span class="three-dots">...</span>
+                        <span id="read-more">Read more</span>
+                        <span id="less">. Less</span>
+                    </p>
 
+                </div>
                 <h3>
                     Select Date and Time
                 </h3>
                 <div class="date-selection">
+                    <div>
 
+                    </div>
                 </div>
                 <button id="reserve-button" class="primary-button">
                     <div>
@@ -71,6 +76,11 @@
                         <img src="../assets/back.svg" alt="">
                     </div>
                 </button>
+                <button id="prev-button " class="d-none" data-test="example test">
+                    <div>
+                        <img src="../assets/back.svg" alt="">
+                    </div>
+                </button>
 
                 <h3>Choose your seats</h3>
                 <button>
@@ -80,7 +90,6 @@
                 </button>
 
             </nav>
-            <hr>
             <div>
                 <div class="screen">
                     <svg viewBox="0 0 336 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,6 +157,8 @@
                     }
                 </script> -->
             </div>
+            <hr class="mobile-d-none">
+
             <div class="seat-selected-description">
                 <div class="selected-info">
                     <div>
@@ -172,15 +183,27 @@
                         </p>
                     </div>
                 </div>
-                <div>
+                <div class="mobile-book-button">
                     <div class="book-button-background">
                         <button disabled id="buy-button">
                             Buy
                         </button>
                     </div>
                 </div>
+                <div class="desktop-book-button">
+                    <button id="buy-button" class="primary-button">
+                        <div>Buy</div>
+                    </button>
+                </div>
             </div>
 
+        </div>
+    </div>
+    <div class="modal">
+        <h3>Are you sure</h3>
+        <div>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">Cancel</button>
         </div>
     </div>
     <script src="data/seat_data.js"></script>

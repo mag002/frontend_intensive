@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .masked-image {
+            position: absolute;
+            width: 280px;
+            height: 520px;
+            background: black;
+            margin: 200px;
+            border-radius: 20px;
+            -webkit-mask-image: url(assets/masked-ticket.png);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid red;
+            top: 0;
+            left: 0;
+        }
+
+        .masked-container {
+            position: relative;
+            display: none;
+        }
+
+        .masked-image>div:first-child {
+            background: red;
+        }
+
+        .masked-container>.masked-image:first-child {
+            transform: rotate(12deg);
+            transform-origin: bottom right;
+        }
+
+        .masked-container>.masked-image:nth-child(2) {
+            transform: rotate(-12deg);
+            transform-origin: bottom left;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background: white;
+            transform: translate(-50%, -50%);
+            min-height: 200px;
+        }
+    </style>
+    <div class="masked-container">
+        <div class="masked-image">
+            <div>
+                Tren
+            </div>
+            <div>
+                Duoi
+            </div>
+
+        </div>
+        <div class="masked-image">
+            <div>
+                Tren
+            </div>
+            <div>
+                Duoi
+            </div>
+
+        </div>
+        <div class="masked-image">
+            <div>
+                Tren
+            </div>
+            <div>
+                Duoi
+            </div>
+
+        </div>
+        <button id="watch-trailer-btn">WATCH TRAILER</button>
+        <div class="modal">
+            <iframe width="1280" autoplay="true" height="720" src="https://www.youtube.com/embed/qthkkHPNAYQ"
+                title="Top 2024 Web Design Trends" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9346.257314212375!2d106.71672479917476!3d10.795115252429685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175279c045dcd09%3A0x673629d70833314b!2zQ2jhuqFuZyBW4bqhbmcgUm9vZnRvcCBxdeG6rW4gMg!5e0!3m2!1sen!2s!4v1714304069767!5m2!1sen!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <script>
+        var btn = document.querySelector('#watch-trailer-btn');
+        var modal = document.querySelector('.modal');
+        btn.onclick = function () {
+            modal.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

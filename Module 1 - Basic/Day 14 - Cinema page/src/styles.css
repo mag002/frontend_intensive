@@ -10,6 +10,11 @@ button {
     outline: none;
 }
 
+#prev-button {
+    display: none !important;
+}
+
+
 .container {
     display: flex;
 
@@ -339,6 +344,32 @@ nav button>div {
     align-items: center;
 }
 
+.mobile-d-none {
+    display: none;
+}
+
+.desktop-book-button {
+    display: none !important;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100vw;
+    min-height: 200px;
+}
+
+/* //
+    Mobile first => min => be toi lon ipad / desktop
+
+*/
+@media only screen and (min-width: 1024px) {}
+
 @media only screen and (min-width: 768px) {
 
     /* from 1024px  */
@@ -346,8 +377,87 @@ nav button>div {
         display: initial;
     }
 
+    .mobile-d-none {
+        display: block
+    }
+
     #reserve-button,
     #back-button {
         display: none;
     }
+
+    .seat-container {
+        position: relative;
+    }
+
+    .seat-selected-description {
+        position: absolute;
+    }
+
+    .date-container {
+        width: 27rem;
+        flex-shrink: 0;
+    }
+
+    .date-container nav {
+        display: none;
+    }
+
+    .content-container {
+        flex-direction: column-reverse;
+    }
+
+    .content-container h3 {
+        display: none;
+    }
+
+    #prev-button {
+        display: block !important;
+    }
+
+    .seat-container>div {
+        max-width: 25rem;
+        margin: 40px auto;
+        padding: 0;
+    }
+
+    .seat-selected-description {
+        width: 100%;
+        max-width: unset !important;
+        background: none;
+        flex-direction: column;
+    }
+
+    .selected-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-book-button {
+        display: none
+    }
+
+    .seat-selected-description button {
+        width: 22.5rem;
+    }
+
+    .seat-selected-description>div:last-child {
+        width: unset;
+    }
+
+    .desktop-book-button {
+        display: block !important;
+    }
 }
+
+
+/* LAM TIEP
+- Ipad screen: tu lam
+- Checkout: Ticket animation
+- watch Trailer / open youtube video
+- Modal/popup
+
+
+*/
