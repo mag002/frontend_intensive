@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    -webkit-animation-name: example;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s;  /* Safari 4.0 - 8.0 */    
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 3s;    
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    from {top: 0px; background-color: yellow;}
+    to {top: 200px;}
+}
+
+@keyframes example {
+    from {top: 0px; background-color: yellow;}
+    to {top: 200px;}
+}
+</style>
+</head>
+<body>
+
+<p>Let the div element get the style values set by the first keyframe before the animation starts (during the animation-delay period):</p>
+
+<div></div>
+
+<p><strong>Note:</strong> The animation-fill-mode property is not supported in Internet Explorer 9 and earlier versions.</p>
+
+</body>
+</html>

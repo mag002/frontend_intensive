@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+}
+
+div:hover {
+    width: 300px;
+    height: 300px;
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
+</style>
+</head>
+<body>
+
+<h1>Transition + Transform</h1>
+
+<p>Hover over the div element below:</p>
+
+<div></div>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+</body>
+</html>
