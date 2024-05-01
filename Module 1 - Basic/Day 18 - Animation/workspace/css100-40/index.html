@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 CSS - Day 4</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 150px;
+            width: 152px;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            margin: 200px;
+        }
+
+        .pic:hover {
+            transform: scale(3);
+            transition-timing-function: linear;
+            z-index: 1;
+        }
+
+        .pic {
+            transform: scale(1);
+            transition: 1s;
+
+            height: 50px;
+            width: 50px;
+            border: 1px solid white;
+        }
+
+        .pic-1 {
+            background: #51CC1B;
+            transform-origin: 0 0;
+
+        }
+
+        .pic-2 {
+            background: #D7CD73;
+            transform-origin: 50% 0;
+
+        }
+
+        .pic-3 {
+            background: #001F4E;
+            transform-origin: 100% 0;
+
+        }
+
+        .pic-4 {
+            background: #A58B39;
+            transform-origin: 0 50%;
+
+        }
+
+        .pic-5 {
+            background: #ECAC48;
+
+        }
+
+        .pic-6 {
+            background: #CEDE92;
+            transform-origin: 100% 50%;
+        }
+
+        .pic-7 {
+            background: #5ABDC5;
+            transform-origin: 0% 100%;
+
+
+        }
+
+        .pic-8 {
+            background: #053EA6;
+            transform-origin: 50% 100%;
+
+        }
+
+        .pic-9 {
+            background: #7F74DA;
+            transform-origin: 100% 100%;
+
+        }
+    </style>
+    <script>
+        document.querySelectorAll(pic)
+    </script>
+    <div class="container">
+        <div class="pic pic-1"></div>
+        <div class="pic pic-2"></div>
+        <div class="pic pic-3"></div>
+        <div class="pic pic-4"></div>
+        <div class="pic pic-5"></div>
+        <div class="pic pic-6"></div>
+        <div class="pic pic-7"></div>
+        <div class="pic pic-8"></div>
+        <div class="pic pic-9"></div>
+    </div>
+</body>
+
+</html>

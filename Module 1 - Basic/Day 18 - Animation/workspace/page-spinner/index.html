@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .page-spinner {
+            height: 100vh;
+            width: 100vw;
+            background: #0000002e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-spinner:after {
+            content: '';
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            border: 3px solid blue;
+            border-left-color: transparent;
+            animation: spin 3s infinite;
+            animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <div class="page-spinner">
+
+    </div>
+</body>
+
+</html>
