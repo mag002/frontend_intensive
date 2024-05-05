@@ -7,15 +7,41 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 drawAxis();
 drawGrid();
-drawRectangle();
-drawCircle(400, 450, 50);
-drawLine();
-drawText();
 
 
-drawCircle(600, 450, 50);
-drawImg();
-transform();
+ctx.beginPath();
+ctx.strokeStyle = 'red';
+ctx.lineWidth = 5
+ctx.moveTo(100, 100);
+ctx.lineTo(200, 200);
+ctx.lineTo(300, 100)
+ctx.stroke();
+
+ctx.beginPath();
+ctx.rect(500, 100, 300, 200);
+ctx.fillStyle = 'red'
+ctx.stroke();
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(150, 350, 50, 0, 2 * Math.PI)
+ctx.stroke();
+ctx.textBaseline = 'middle';
+
+ctx.font = "20px Arial";
+ctx.fillText("Hello World!", 100, 100)
+// drawRectangle();
+// drawCircle(400, 450, 50);
+// drawLine();
+// drawText();
+// drawCircle(600, 450, 50);
+// drawImg();
+// transform();
+
+
+
+
+
 function drawAxis() {
     ctx.font = "12px Comic Sans MS";
     ctx.fillStyle = "green";
@@ -48,8 +74,8 @@ function drawLine() {
     gradient.addColorStop("0.5", "magenta");
     gradient.addColorStop("1.0", "cyan");
     // Fill with gradient
-    ctx.strokeStyle = gradient;
-    //ctx.strokeStyle = "green";
+    // ctx.strokeStyle = gradient;
+    ctx.strokeStyle = "green";
     ctx.moveTo(200, 120);
     ctx.lineTo(800, 120);
     ctx.stroke();
