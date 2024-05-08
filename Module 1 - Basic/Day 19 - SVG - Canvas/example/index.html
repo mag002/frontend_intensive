@@ -15,79 +15,8 @@
         }
     </style>
     <canvas></canvas>
-    <!-- 
-        20 circles
-        OOP => Object/Class
-     -->
-    <script>
-        var canvas = document.getElementsByTagName('canvas')[0];
-        var mouse = {
-            x: undefined,
-            y: undefined
-        }
+    <script src="scripts/mouse_point.js"></script>
 
-        function mousemove(e) {
-            mouse.x = e.x;
-            mouse.y = e.y;
-
-        }
-        function mouseout() {
-            mouse.x = undefined;
-            mouse.y = undefined;
-        }
-
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.window.innerHeight;
-
-        var ctx = canvas.getContext('2d');
-
-        var x = Math.random() * 500;
-        var y = Math.random() * 500;
-        var directionX = 1;
-        var directionY = 1;
-        var speed = 10;
-        var hue = 1;
-
-        var rad = 100;
-
-        function randomInt(min, max) {
-            return Math.round((Math.random() * (max - min)) + min)
-        }
-        function drawCircle() {
-            ctx.beginPath();
-            ctx.arc(x, y, rad, 0, Math.PI * 2)
-            ctx.fillStyle = `hsl(${hue},100%,50%)`;
-            ctx.fill()
-            ctx.stroke();
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-            if (mouse.x) {
-                x = mouse.x;
-                y = mouse.y;
-            }
-            // if (y + rad > window.innerHeight || y - rad < 0) {
-            //     directionY = directionY * -1
-            // }
-            // if (x + rad > window.innerWidth || x - rad < 0) {
-            //     directionX = directionX * -1
-            // }
-
-            // hue++;
-
-            // y += speed * directionY;
-            // x += speed * directionX;
-            drawCircle();
-            requestAnimationFrame(animate);
-
-        }
-        animate();
-
-        window.addEventListener('mousemove', mousemove)
-        window.addEventListener('mouseout', mouseout)
-    </script>
 </body>
 
 </html>
