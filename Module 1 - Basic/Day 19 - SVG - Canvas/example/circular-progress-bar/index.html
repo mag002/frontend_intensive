@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+    </style>
+    <canvas></canvas>
+    <script>
+        var canvas = document.getElementsByTagName('canvas')[0];
+        canvas.width = window.innerWidth;
+        canvas.height = window.window.innerHeight;
+        var ctx = canvas.getContext('2d');
+        function percentToDegree() {
+
+        }
+        function draw() {
+            ctx.beginPath();
+
+
+            ctx.lineWidth = 5;
+            ctx.fillStyle = '#222'
+
+            // 100% => Degree
+
+            // 0 => 25%
+            // Math. PI => 75%
+            // =>
+            ctx.arc(250, 250, 100, -Math.PI / 2, percentToDegree(50))
+            ctx.stroke();
+            ctx.fillText()
+        }
+        draw();
+
+
+    </script>
+</body>
+
+</html>
