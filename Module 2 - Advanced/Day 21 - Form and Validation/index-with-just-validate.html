@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="login-form">
+        <label for="email">email:</label>
+
+        <input type="text" id="email">
+
+        <label for="password">password:</label>
+
+        <input type="password" id="password">
+        <button>submit</button>
+    </form>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <!-- code relate to the library must be declare or import below the CDN -->
+    <script>
+        var validator = new JustValidate('#login-form');
+        validator.addField('#email', [
+            {
+                rule: 'email',
+                errorMessage: "TEST"
+            },
+            {
+                rule: 'required',
+                errorMessage: "REQUIREDDDD!!!!"
+            }
+        ]);
+    </script>
+</body>
+
+</html>

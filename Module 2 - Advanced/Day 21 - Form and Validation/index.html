@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Form</title>
+</head>
+
+<body>
+    <!-- HTTP Request Method -->
+    <form action="/submit" method="POST" id="loginForm">
+        <label for="email">id:</label>
+        <input type="text" id="email" name="email">
+        <p id="email-error" style="display:none; color:red">email invalid</p>
+        <br>
+        <label for="pw">password:</label>
+        <input type="password" id="pw" name="pw">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        var emailErrorHTML = document.getElementById('email-error');
+
+        var emailHTML = document.getElementById('email');
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var pw = document.getElementById('pw').value;
+
+            if (emailHTML.value.length < 3) {
+                emailErrorHTML.innerText = 'ID must be greater than 3'
+                emailErrorHTML.style.display = "block"
+                return
+            }
+            if (pw.length < 4 || pw.length > 10) {
+                return alert("Password must be greater than 4 and less than 10")
+            }
+
+            console.log({ id, pw })
+        })
+
+        emailHTML.addEventListener('keyup', function(e){var currentValue = e.target.value;emailErrorHTML.style.display = "none";const validateResult = emailValidate(currentValue);if (!validateResult) {emailErrorHTML.style.display = "block";}})
+
+        function emailValidate(email){
+          return  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)
+        }
+
+
+        // on submition 
+
+        // on change
+
+        
+        // Form validation
+
+        // id: minCharacters: 3
+        // pw: minCharacters: 4, maxCharacters: 10
+
+        // When submit
+        // invalid: notify user the invalid field
+        // when valid => console.log(...data...)
+
+        // 10 mins
+
+
+        // email/password
+        // validate email valid
+        // pw: minCharacters: 4, maxCharacters: 10
+
+        // inline error appears when user type something invalid
+        // run validation when submit the form
+
+    </script>
+</body>
+
+</html>
