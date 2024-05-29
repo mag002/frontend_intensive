@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>jQuery Animations</h1>
+    <button id="animate">Animate</button>
+    <div style="display:flex; gap:5px">
+        <div class="box" style="width:100px;height:100px;background-color:red;margin-top:20px;">1</div>
+        <div class="box" style="width:100px;height:100px;background-color:red;margin-top:20px;">2</div>
+        <div class="box" style="width:100px;height:100px;background-color:red;margin-top:20px;">3</div>
+        <div class="box" style="width:100px;height:100px;background-color:red;margin-top:20px;">4</div>
+        <div class="box" style="width:100px;height:100px;background-color:red;margin-top:20px;">5</div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        /**
+            $(); // query
+            text(),
+            html(), 
+            val();
+            css(), 
+            addClass(), 
+            removeClass(), 
+            toggleClass(),
+
+
+            ajax
+
+            animate()
+            hide(), show(), fadeIn(), fadeOut(), slideDown(), slideUp()
+         * */
+
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('.box').click(function () {
+                $(this).slideUp();
+            })
+
+        });
+
+        // function = callback => function nhan vao duoi dang 1 tham so = callback hell
+
+        // Promise
+        
+
+        // await function();
+
+        // Promise js
+
+        // fucntion / method
+
+        // AJAX => JS BOM
+        // session/cookie/
+
+        // authentication / authorization 
+
+        // JWT token
+        // token / refreshtoken
+
+        // login => success => Server return (generate jWt token => store DB => user) token
+
+        // => FE receive a token => store token in cookie/browser storage (session storage/local storage)
+
+
+        // Request repository (my repository) 
+        
+
+        // private repostirory (request) => send the request with the token insde of header
+
+        // BE: receive the request, get the token and go to DB to validate the token.
+
+        // token: 1 hour
+        // login=> after 30 mins=> go the website again =>  api/refreshtoken=> token => token moi 1 hour
+        
+        // 403 unauthorized => logout
+
+
+        /*
+        
+            User [user_id, name, token, role]
+            Role 
+            Features [feature_name, description, role 3]]
+            token, features: []
+
+
+            token decrypt => user_id => DB query user info => validate token valid => validate user role
+             => role get the role column , validate with user role => valid => success
+
+
+             invalid => 403 unautorized / Permission denied
+             feature=>navigation bar => UI navigation
+             Blog post=> request blog post details => user_permission [crud] => don't have edit button
+
+             user_id == {repository info} owner_id
+
+            request submit send to backend => Backend validate again =>
+
+            => POSTMAN Post request update blog post
+
+
+
+            SQL Injection
+
+            => DROP TABLE>...
+
+
+        
+         * 
+         
+         tuy thuoc vo location => goi toi sever gan nhat 
+
+         NAB => 3 4 layers proxy
+         
+         
+         
+         */
+    </script>
+</body>
+
+</html>
