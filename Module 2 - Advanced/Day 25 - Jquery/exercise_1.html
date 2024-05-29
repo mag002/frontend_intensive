@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercise</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery DOM Manipulation</h1>
+
+    <div id="content">
+        <p id="text-element">This is the original text.</p>
+        <div id="html-element">
+            <p>This is the original HTML content.</p>
+        </div>
+    </div>
+
+    <button id="change-text">Change Text</button>
+    <button id="change-html">Change HTML</button>
+    <button id="highlight">Highlight</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <script>
+        /*
+                    Exercise: Using jQuery .text(), .html(), and .css()
+                    Objective:
+                        Students will practice using jQuery methods .text(), .html(), and .css() to manipulate the DOM.
+            
+                    Instructions:
+                        Create an HTML file with a structure as described below.
+                        Write jQuery code to manipulate the DOM elements using .text(), .html(), and .css() methods.
+                        HTML Structure:
+                        Create an HTML file named exercise.html with the following structure:
+            
+                    Exercise Tasks:
+                        Change Text: When the "Change Text" button is clicked, 
+                        change the text of the <p> element with the ID text-element to "The text has been changed!".
+            
+                        Change HTML: When the "Change HTML" button is clicked, 
+                        change the HTML content of the <div> element with the ID html-element to include a new paragraph:
+                        <p>This is the new HTML content.</p>.
+            
+                        Highlight Text: When the "Highlight" button is clicked, 
+                        change the CSS of the <p> element with the ID text-element to have the highlight class,
+                        which changes the text color to red and makes it bold.
+                    
+            
+            */
+        $(document).ready(function () {
+            $('#change-text').click(function () {
+                $('#text-element').text("The text has been changed!")
+            })
+
+            $('#change-html').click(function () {
+                $('#html-element').html('<p>This is the new HTML content.</p>.')
+            })
+
+            $('#highlight').click(function () {
+                $('#text-element').css({
+                    color: 'red',
+                    fontWeight: 'bold'
+                })
+                console.log(
+                    $('#text-element').css('fontWeight')
+                )
+            })
+
+        })
+    </script>
+</body>
+
+</html>
