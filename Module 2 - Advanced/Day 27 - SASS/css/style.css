@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+button {
+  background: red;
+  color: black;
+}
+
+div h1 {
+  color: red;
+}
+
+nav {
+  display: flex;
+}
+nav ul {
+  display: flex;
+  padding: 0px;
+  list-style-type: none;
+}
+nav ul li {
+  border: 1px solid red;
+  background-color: blue;
+  padding: 10px;
+  color: white;
+}
+
+button {
+  border: 1px solid #d2d2d2;
+  background-color: blue;
+  padding: 10px;
+  color: white;
+}
+
+a {
+  border: 1px solid purple;
+  background-color: pink;
+  padding: 10px;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

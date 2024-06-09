@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SCSS Mixin Exercise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+    <div class="container">
+        <h1>SCSS Mixin Exercise</h1>
+        <button class="btn-primary">Primary Button</button>
+        <button class="btn-secondary">Secondary Button</button>
+        <div class="card">
+            <div class="right"></div>
+            <div class="left"></div>
+            <h2>Card Title</h2>
+            <p>This is a card description. It should have a border and some padding.</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Exercise Tasks:
+Create a Mixin for Button Styles: Define a mixin called button-styles that applies the following styles:
+
+Padding of 10px 20px
+Border-radius of 5px
+Font size of 16px
+Font color of white
+A background color parameter to allow different button styles
+
+
+Create a Mixin for Card Styles: Define a mixin called card-styles that applies the following styles:
+
+Padding of 15px
+Border-radius of 10px
+Box-shadow with 0 4px 8px rgba(0, 0, 0, 0.2)
+Border of 1px solid #ddd
+
+Apply Mixins to Elements:
+
+Use the button-styles mixin to style the .btn-primary and .btn-secondary classes. The .btn-primary button should have a
+blue background, and the .btn-secondary button should have a gray background.
+
+Use the card-styles mixin to style the .card class.
+
+Compile SCSS to CSS: Use the sass command to compile your SCSS file to a CSS file. -->
