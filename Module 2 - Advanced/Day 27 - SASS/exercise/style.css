@@ -1,0 +1,29 @@
+button {
+  background-color: #e4062b;
+}
+button:hover {
+  background-color: #b20522;
+}
+button:hover.abc {
+  color: blue;
+}
+
+.right {
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 25px;
+  border-left-color: red;
+}
+
+.left {
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 25px;
+  border-right-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,5 @@
+@use '../global/function';
+
+.primary-button {
+    @include function.button-styles('red')
+}

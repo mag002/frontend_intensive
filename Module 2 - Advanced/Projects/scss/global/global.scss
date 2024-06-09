@@ -1,0 +1,34 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Cantarell", sans-serif;
+}
+
+.btn-primary {
+    --bs-btn-bg: #e4062b;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #e4062b;
+    --bs-btn-border-color: #e4062b;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #A81E35;
+    --bs-btn-hover-border-color: #A81E35;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #A81E35;
+    --bs-btn-active-border-color: #A81E35;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #e4062b;
+    --bs-btn-disabled-border-color: #e4062b;
+}
+
+nav {
+
+    .navbar-brand img {
+        width: 200px;
+    }
+
+    .nav-item {
+        font-weight: bold;
+    }
+}
