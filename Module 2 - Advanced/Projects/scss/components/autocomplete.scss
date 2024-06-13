@@ -1,0 +1,50 @@
+@use '../global/global';
+@use 'sass:color';
+
+.auto-complete {
+    .search-container {
+        display: flex;
+        border: 1px solid black;
+        align-items: baseline;
+        gap: 10px;
+
+        .selected-items {
+            display: flex;
+            gap: 10px;
+
+            .selected-item {
+                padding: 3px 10px;
+                border-radius: 2rem;
+                background: #E5E3E8;
+                display: flex;
+                gap: 5px;
+
+                button.delete-item {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: transparent;
+                    border-radius: 100%;
+                    border: none;
+
+                    &:hover {
+                        background: darken(#E5E3E8, 10%);
+                    }
+                }
+            }
+        }
+
+        input {
+            border: none;
+            outline: none;
+        }
+    }
+
+    .results {
+        b {
+            pointer-events: none;
+        }
+    }
+}
