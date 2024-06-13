@@ -1,0 +1,70 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Cantarell", sans-serif;
+}
+
+.btn-primary {
+  --bs-btn-bg: #e4062b;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #e4062b;
+  --bs-btn-border-color: #e4062b;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #A81E35;
+  --bs-btn-hover-border-color: #A81E35;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #A81E35;
+  --bs-btn-active-border-color: #A81E35;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #e4062b;
+  --bs-btn-disabled-border-color: #e4062b;
+}
+
+nav .navbar-brand img {
+  width: 200px;
+}
+nav .nav-item {
+  font-weight: bold;
+}
+
+.auto-complete .search-container {
+  display: flex;
+  border: 1px solid black;
+  align-items: baseline;
+  gap: 10px;
+}
+.auto-complete .search-container .selected-items {
+  display: flex;
+  gap: 10px;
+}
+.auto-complete .search-container .selected-items .selected-item {
+  padding: 3px 10px;
+  border-radius: 2rem;
+  background: #E5E3E8;
+  display: flex;
+  gap: 5px;
+}
+.auto-complete .search-container .selected-items .selected-item button.delete-item {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 100%;
+  border: none;
+}
+.auto-complete .search-container .selected-items .selected-item button.delete-item:hover {
+  background: #cbc7d1;
+}
+.auto-complete .search-container input {
+  border: none;
+  outline: none;
+}
+.auto-complete .results b {
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=autocomplete.css.map */
