@@ -1,2 +1,44 @@
 @use 'global';
-@use '../components/search'
+@use '../components/search';
+
+%result-box {
+    position: absolute;
+    background: white;
+    width: 100%;
+    top: 100%;
+    left: 0;
+}
+
+.search {
+    .nav-tabs .nav-item {
+        flex: 1;
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .tab-content {
+        img.icon {
+            width: 1rem;
+        }
+
+        #buy-search {
+            width: 100%;
+
+            .results {
+                @extend %result-box;
+
+                &:before {
+                    content: "Suggested locations";
+                }
+            }
+        }
+
+
+    }
+
+    .recent-search {
+        @extend %result-box;
+    }
+}

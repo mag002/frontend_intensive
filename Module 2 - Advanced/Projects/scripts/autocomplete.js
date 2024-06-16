@@ -1,31 +1,6 @@
 function generateAutoComplete(id, settings) {
-    const countryData = [
-        {
-            "id": 0,
-            "label": "Australia",
-            "value": "australia"
-        },
-        {
-            "id": 1,
-            "label": "Austria",
-            "value": "austria"
-        },
-        {
-            "id": 2,
-            "label": "Cambodia",
-            "value": "cambodia"
-        },
-        {
-            "id": 3,
-            "label": "UK",
-            "value": "uk"
-        },
-        {
-            "id": 4,
-            "label": "Vietnam",
-            "value": "vietnam"
-        }
-    ]
+    const defaultData = settings.data;
+    console.log('defaultData', defaultData)
     let selectedItems = [];
 
 
@@ -50,7 +25,7 @@ function generateAutoComplete(id, settings) {
     const selectedItemsHTML = $(id + ' .selected-items')
     const resultsContainerHTML = $(id + ' .results ul');
     // First time
-    generateResultsList(countryData);
+    generateResultsList(defaultData);
     resultsHTML.hide();
 
     // FUNCTION DECLARATION
@@ -77,7 +52,7 @@ function generateAutoComplete(id, settings) {
         }
         selectedItemsHTML.html("")
         selectedItems.forEach(selectedItem => { //id,1,2,3,4
-            const selectedCountry = countryData.find(item => item.id == selectedItem); // {id:1,label:'',value:''}
+            const selectedCountry = defaultData.find(item => item.id == selectedItem); // {id:1,label:'',value:''}
             console.log('selectedCountry', selectedCountry)
             const itemHTML = generateItem(selectedCountry);
             selectedItemsHTML.append(itemHTML)
@@ -92,7 +67,7 @@ function generateAutoComplete(id, settings) {
     }
 
     function rerenderResultList() {
-        const filteredData = countryData.filter(({ id, label }) => label.toLowerCase().includes(userInput.toLowerCase()) && !selectedItems.includes(id))
+        const filteredData = defaultData.filter(({ id, label }) => label.toLowerCase().includes(userInput.toLowerCase()) && !selectedItems.includes(id))
         // Clear current suggestions
         resultsContainerHTML.html("");
         // Generate new results
@@ -101,8 +76,8 @@ function generateAutoComplete(id, settings) {
 
     }
     function generateResultsList(data) {
-        console.log("RUN generateResultsList", countryData)
-        if (!data.length) { // data.length === 0
+        console.log("RUN generateResultsList", defaultData)
+        if (!data.length && settings.showNoResultsMessage) { // data.length === 0
             resultsContainerHTML.append(`<li>No result found</li>`);
             return;
         }
@@ -154,5 +129,5 @@ function generateAutoComplete(id, settings) {
 
         }
     })
-
+    return selectedItems;
 }

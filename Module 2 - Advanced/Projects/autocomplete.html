@@ -24,8 +24,10 @@
     <div id="buy"></div>
     <script src="scripts/autocomplete.js"></script>
     <script>
+
         generateAutoComplete('#rent', { multiple: true, showAfterChar: 1, maximumResultsShow: 5 });
         generateAutoComplete('#buy', {
+            data: countryData, //fetch from API
             multiple: false, onClick: function (selectedItem) {
                 console.log('selected', selectedItem)
                 window.location.href = "/search/" + selectedItem;
