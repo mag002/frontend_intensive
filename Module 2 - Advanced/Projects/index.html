@@ -20,7 +20,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" $y="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="css/components/autocomplete.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -113,35 +113,98 @@
             <div class="search-container rounded card">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                            type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                        <button class="nav-link active" id="buy-tab" data-bs-toggle="tab" data-bs-target="#buy"
+                            type="button" role="tab" aria-controls="buy" aria-selected="true">Buy</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                            type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                        <button class="nav-link" id="rent-tab" data-bs-toggle="tab" data-bs-target="#rent" type="button"
+                            role="tab" aria-controls="rent" aria-selected="false">rent</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                            type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                        <button class="nav-link" id="sold-tab" data-bs-toggle="tab" data-bs-target="#sold" type="button"
+                            role="tab" aria-controls="sold" aria-selected="false">sold</button>
                     </li>
+
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        input 1
+                    <div class="tab-pane fade show active px-2 py-3" id="buy" role="tabpanel" aria-labelledby="buy-tab">
+                        <div class="d-flex gap-2 align-items-center">
+                            <img src="assets/icons/search-icon.svg" class="icon" alt="search-icon">
+                            <div id="buy-search">
+                                <!-- Search component -->
+                            </div>
+                            <button class="btn btn-light d-flex rounded-pill border px-3 py-2 align-items-center gap-1"
+                                type="submit">
+                                <img src="assets/icons/filter-icon.svg" class="icon" alt="">
+                                Filter
+                            </button>
+                            <button class="btn btn-primary rounded-pill px-3 py-2" type="submit">Search</button>
+                        </div>
+
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="rent-tab">
                         input 2
                     </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="tab-pane fade" id="sold" role="tabpanel" aria-labelledby="sold-tab">
                         input 3
+                    </div>
+                </div>
+                <div class="recent-search d-none">
+                    <h5>
+                        Suggested location
+                    </h5>
+                    <div>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, sequi.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, sequi.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, sequi.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <script src="scripts/autocomplete.js"></script>
     <script>
+        //    $.post('http://localhost:3000/posts', JSON.stringify({
+        //         "id": "9", "title": "a title", "views": 900
+        //     })).then(result => console.log(result))
         $(window).ready(function () {
-            console.log("JQUERY READY")
+            const userSearchValues = [];
+            // Full page spinner
+            $.get('http://localhost:3000/search-suggestions').then(data => {
+                // hide spinner
+                selectedItem = generateAutoComplete('#buy-search', {
+                    data, //fetch from API
+                    multiple: true
+                });
+
+                $('#buy-search .search-container input').on('keyup', function (e) {
+                    $('#buy-search .results .search-for').remove();
+                    $('#buy-search .results').append(`<div class="search-for">Search for: ${e.target.value}</div>`)
+                    $('#buy-search .results .search-for').on('click', function () {
+                        userSearchValues.push(e.target.value)
+                        $('#buy-search .selected-items').append(`
+                        <div class="selected-item" data-id="${e.target.value}">
+                            ${e.target.value}
+                            <button class="delete-item">
+                                <svg class="CK__Icon--medium Pill__FatCross-sc-eiw3o3-0 hQjktV" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.854 2.854a.5.5 0 0 0-.708-.708L8 7.293 2.854 2.146a.5.5 0 0 0-.708.708L7.293 8l-5.147 5.146a.5.5 0 0 0 .708.708L8 8.707l5.146 5.147a.5.5 0 0 0 .708-.708L8.707 8l5.147-5.146Z" fill="currentColor"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    `)
+                        $('#buy-search .search-container input').val("");
+
+                        $('#buy-search .results').hide();
+                    })
+                })
+            })
+            // EXERCISE: 16/06/2024
+            // - Complete recent-search
+            // - Complete add user input and delete
+
+
         })
     </script>
 </body>

@@ -40,4 +40,28 @@ nav .nav-item {
   max-width: 800px;
 }
 
+.search .recent-search, .search .tab-content #buy-search .results {
+  position: absolute;
+  background: white;
+  width: 100%;
+  top: 100%;
+  left: 0;
+}
+
+.search .nav-tabs .nav-item {
+  flex: 1;
+}
+.search .nav-tabs .nav-item button {
+  width: 100%;
+}
+.search .tab-content img.icon {
+  width: 1rem;
+}
+.search .tab-content #buy-search {
+  width: 100%;
+}
+.search .tab-content #buy-search .results:before {
+  content: "Suggested locations";
+}
+
 /*# sourceMappingURL=index.css.map */
