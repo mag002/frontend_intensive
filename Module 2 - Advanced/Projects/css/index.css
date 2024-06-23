@@ -63,5 +63,32 @@ nav .nav-item {
 .search .tab-content #buy-search .results:before {
   content: "Suggested locations";
 }
+.custom-carousel .owl-carousel .owl-stage {
+  padding-left: 0px !important;
+}
+.custom-carousel .owl-carousel .owl-dots {
+  display: none;
+}
+.custom-carousel .owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transform: translate(0, -50%);
+}
+.custom-carousel .owl-carousel .owl-nav button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1px solid #d2d2d2;
+  cursor: pointer;
+  z-index: 1;
+  background: #fff;
+  font-size: 1.5rem;
+}
+.custom-carousel .owl-carousel .owl-nav button.disabled {
+  visibility: hidden;
+}
 
 /*# sourceMappingURL=index.css.map */
