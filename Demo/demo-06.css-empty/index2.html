@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo</title>
+</head>
+
+<body>
+    <style>
+        div {
+            border: 5px solid black;
+            margin: 50px 200px 10px 35px;
+            /*khoảng cách giữa 2 elements tính từ border*/
+            /*margin tính theo chiều kim đồng hồ (trên - phải - dưới - trái) */
+            /*x: 4 góc
+              x-y: x (trên dưới) & y(trái phải)
+              x-y-z: x(trên) y(trái phải) z(dưới)*/
+            width: 600px;
+            height: 100px;
+            box-sizing: border-box;
+            /*border-box: tự động chia width và height tính từ border, nếu ko khai border-box thì default tính từ content*/
+        }
+        
+        p {
+            border: 2px solid lightcoral;
+            outline: 10px solid yellowgreen;
+            /*outline được tính như border, nhưng nó ko ảnh hưởng đến margin (sẽ không làm bể khung hình)*/
+            outline-offset: 10px;
+            /*tính khoảng cách từ outline đến border*/
+        }
+        
+        h1 {
+            background: lightseagreen;
+            border: 1px solid black;
+        }
+        
+        a {
+            color: darkmagenta;
+            background: lightblue;
+        }
+        /*pseudo class*/
+        
+        a:hover {
+            color: bisque;
+            font-weight: bold;
+            background: lightcoral;
+            font-size: 50px;
+        }
+        
+        a:visited
+        /*đã truy cập*/
+        
+        {
+            color: red;
+        }
+        
+        a:active
+        /*khi giữ chuột hoặc kéo*/
+        
+        {
+            color: green;
+        }
+    </style>
+    <h1>TOP</h1>
+    <div>
+        <p>Buổi 6</p>
+    </div>
+    <h1>BOTTOM</h1>
+    <a href="#">Link</a>
+
+</body>
+
+</html>

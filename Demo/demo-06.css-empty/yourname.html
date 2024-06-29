@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.html">
+</head>
+
+<body>
+    <style>
+        * {
+            font-family: sans-serif;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        body {
+            background-image: radial-gradient(lightblue, lightcoral);
+            background-repeat: no-repeat;
+            height: 100vh;
+            padding-top: 250px;
+        }
+        
+        img {
+            max-width: 200px;
+            border: dotted lightcoral;
+        }
+        
+        table {
+            border: white solid 2px;
+            border-collapse: collapse;
+            margin: auto auto;
+        }
+        
+        th {
+            background-color: lightcoral;
+            color: white;
+            font-size: 20px;
+        }
+        
+        tr,
+        th,
+        td {
+            border: white solid 2px;
+            padding: 20px;
+        }
+        
+        span {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+    <table>
+        <tr>
+            <th colspan="2">Thẻ Học Viên</th>
+        </tr>
+        <tr>
+            <td rowspan="3"> <img src="" alt="image"></td>
+            <td>
+                <span>họ và tên:</span> Nguyễn Thành Long
+            </td>
+        </tr>
+        <tr>
+            <td><span>lớp:</span> Kmin Front-end 8</td>
+        </tr>
+        <tr>
+            <td><span>phone:</span> 07848787xx</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

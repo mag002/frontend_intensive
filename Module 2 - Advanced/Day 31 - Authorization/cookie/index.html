@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Authentication Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <h1>Protected Resource</h1>
+    <button id="get-resource">Get Resource</button>
+    <p id="resource"></p>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:3001';
+
+        $(document).ready(function () {
+            $('#login-form').submit(function (event) {
+                event.preventDefault();
+                const username = $('#username').val();
+                const password = $('#password').val();
+
+                $.ajax({
+                    url: `${API_URL}/login`,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ username, password }),
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function (response) {
+                        alert('Login successful!');
+                    },
+                    error: function () {
+                        alert('Login failed!');
+                    }
+                });
+            });
+
+            $('#get-resource').click(function () {
+                $.ajax({
+                    url: `${API_URL}/resource`,
+                    method: 'GET',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function (response) {
+                        $('#resource').text(response.data);
+                    },
+                    error: function (jqXHR) {
+                        if (jqXHR.status === 401) {
+                            refreshAccessToken();
+                        } else {
+                            alert('Failed to fetch resource!');
+                        }
+                    }
+                });
+            });
+
+            function refreshAccessToken() {
+                $.ajax({
+                    url: `${API_URL}/refresh`,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function (response) {
+                        alert('Token refreshed, try again!');
+                    },
+                    error: function () {
+                        alert('Failed to refresh token!');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
