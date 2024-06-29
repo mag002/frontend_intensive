@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Timeline Component</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timeline {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .event {
+            stroke: #000;
+            stroke-width: 2;
+            cursor: pointer;
+            transition: fill 0.3s;
+        }
+
+        .event:hover {
+            fill: lightblue;
+        }
+
+        .details {
+            margin-top: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .label {
+            font-size: 12px;
+            text-anchor: middle;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">SVG Timeline</h1>
+    <svg class="timeline" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Timeline Line -->
+        <line x1="50" y1="100" x2="750" y2="100" stroke="#000" stroke-width="2" />
+
+        <!-- Timeline Events -->
+        <text x="150" y="70" class="label">21/07/2024</text>
+        <circle class="event" cx="150" cy="100" r="20" data-detail="Event 1: Introduction" />
+
+        <text x="300" y="70" class="label">22/07/2024</text>
+        <circle class="event" cx="300" cy="100" r="20" data-detail="Event 2: Development" />
+
+        <text x="450" y="70" class="label">23/07/2024</text>
+        <circle class="event" cx="450" cy="100" r="20" data-detail="Event 3: Testing" />
+
+        <text x="600" y="70" class="label">24/07/2024</text>
+        <circle class="event" cx="600" cy="100" r="20" data-detail="Event 4: Deployment" />
+    </svg>
+
+    <div class="details" id="details">Click on an event to see details.</div>
+
+    <script>
+        document.querySelectorAll('.event').forEach(function (evt) {
+            evt.setAttribute('fill', 'gray');
+        });
+        document.querySelectorAll('.event').forEach(function (event) {
+            event.addEventListener('click', function () {
+                // Reset all events to gray
+                document.querySelectorAll('.event').forEach(function (evt) {
+                    evt.setAttribute('fill', 'gray');
+                });
+                // Set clicked event to yellow
+                event.setAttribute('fill', 'yellow');
+                // Display event details
+                const detailText = event.getAttribute('data-detail');
+                document.getElementById('details').textContent = detailText;
+            });
+        });
+    </script>
+</body>
+
+</html>
