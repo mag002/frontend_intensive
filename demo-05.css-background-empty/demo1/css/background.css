@@ -1,0 +1,21 @@
+*{
+    margin:0px;
+}
+
+.background{
+    height: 800px;
+    width:50%;
+
+}
+.bg-1{
+    float:left;
+  
+}
+
+.bg-2{
+    float:right;
+    
+
+}
+
+

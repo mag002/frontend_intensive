@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Authentication Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <h1>Protected Resource</h1>
+    <button id="get-resource">Get Resource</button>
+    <p id="resource"></p>
+
+    <script>
+        const API_URL = 'http://localhost:3001';
+
+        $(document).ready(function () {
+            $('#login-form').submit(function (event) {
+                event.preventDefault();
+                const username = $('#username').val();
+                const password = $('#password').val();
+
+                $.ajax({
+                    url: `${API_URL}/login`,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ username, password }),
+                    success: function (response) {
+                        localStorage.setItem('accessToken', response.accessToken);
+                        localStorage.setItem('refreshToken', response.refreshToken);
+                        alert('Login successful!');
+                    },
+                    error: function () {
+                        alert('Login failed!');
+                    }
+                });
+            });
+
+            $('#get-resource').click(function () {
+                const accessToken = localStorage.getItem('accessToken');
+
+                $.ajax({
+                    url: `${API_URL}/resource`,
+                    method: 'GET',
+                    headers: { Authorization: `Bearer ${accessToken}` },
+                    success: function (response) {
+                        $('#resource').text(response.data);
+                    },
+                    error: function (jqXHR) {
+                        if (jqXHR.status === 401) {
+                            refreshAccessToken();
+                        } else {
+                            alert('Failed to fetch resource!');
+                        }
+                    }
+                });
+            });
+
+            function refreshAccessToken() {
+                const refreshToken = localStorage.getItem('refreshToken');
+
+                $.ajax({
+                    url: `${API_URL}/refresh`,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ refreshToken }),
+                    success: function (response) {
+                        localStorage.setItem('accessToken', response.accessToken);
+                        alert('Token refreshed, try again!');
+                    },
+                    error: function () {
+                        alert('Failed to refresh token!');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

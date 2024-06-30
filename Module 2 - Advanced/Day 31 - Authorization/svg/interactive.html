@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive SVG Map</title>
+    <style>
+        .map {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+
+        .state {
+            fill: #cccccc;
+            stroke: #ffffff;
+            stroke-width: 1;
+            cursor: pointer;
+        }
+
+        .state:hover {
+            fill: #ffcc00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Interactive SVG Map</h1>
+    <svg class="map" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+        <path class="state" d="M200 200 L250 150 L300 200 L250 250 Z" data-name="State 1" />
+        <path class="state" d="M300 200 L350 150 L400 200 L350 250 Z" data-name="State 2" />
+    </svg>
+    <script>
+        document.querySelectorAll('.state').forEach(function (state) {
+            state.addEventListener('click', function () {
+                alert('You clicked on ' + state.getAttribute('data-name'));
+            });
+        });
+    </script>
+</body>
+
+</html>
