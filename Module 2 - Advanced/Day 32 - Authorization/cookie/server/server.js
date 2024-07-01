@@ -11,7 +11,7 @@ const REFRESH_SECRET_KEY = "your-refresh-secret-key";
 
 app.use(bodyParser.json());
 app.use(
-  cors({
+  cors({ // Cross o
     origin: "http://127.0.0.1:5500", // Change this to your frontend's origin
     credentials: true,
   })
