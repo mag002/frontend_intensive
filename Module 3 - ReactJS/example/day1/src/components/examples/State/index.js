@@ -1,11 +1,38 @@
 import { useState } from 'react';
+import styles from './State.module.css'
+import styled from 'styled-components'
+import { Button } from '../../chat/LoginForm/LoginForm.styles';
+const StyledHeadingContainer = styled.div`
+    border: 1px solid white;
+    & > h1 {
+        text-decoration: underline;
+        text-transform: ${props => props.capitalize ? 'capitalize' : 'initial'}
+    }
+`
+function TestComponent({ className }) {
+    return <div className={className}>
+        TEST COMPONENT
+    </div>
+}
+// Higher order component
+const StyledTestComponent = styled(TestComponent)` // generate a css className // Pass that class name as a props to the component
+  color: #BF4F74;
+  font-weight: bold;
+`;
+
+
 
 function DarkModeApp() {
-    return <h1>This is application wiht darkmode</h1>
+    return <StyledHeadingContainer capitalize>
+        <h1>This is application wiht darkmode</h1>
+        <StyledTestComponent></StyledTestComponent>
+    </StyledHeadingContainer>
 }
 
 function LigtModeApp() {
-    return <h1>This is application wiht lightmode!!!!</h1>
+    return <StyledHeadingContainer >
+        <h1>This is application wiht LIGHT</h1>
+    </StyledHeadingContainer>
 
 }
 function State() {
@@ -24,7 +51,9 @@ function State() {
     const handleOnClick = () => {
         setDarkMode(!darkMode)
     }
-    return <div>
+    // const style = darkMode ? { backgroundColor: 'black', color: 'white' } : { backgroundColor: 'white', color: 'black' }
+    return <div className={darkMode ? styles.darkBg : styles.whiteBg}>
+        <StyledTestComponent />
         <h1>Darkmode: {darkMode ? 'ON' : 'OFF'}</h1>
         <button onClick={handleOnClick}>Switch mode</button>
         {/* <h1>Count: {count}</h1>

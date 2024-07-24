@@ -4,6 +4,7 @@ import UserCard from './components/chat/UserCard';
 import State from './components/examples/State';
 import UserList from './components/chat/UserList';
 import LoginForm from './components/chat/LoginForm';
+import TodoList from './components/todo-list/TodoList';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -16,9 +17,10 @@ function App() {
   return (
     <div className="App">
       {/* CHAT */}
-      {
-        isLoggedIn ? <UserList /> : <LoginForm onLogin={handleLogin} />
-      }
+      {/* {
+        true ? <UserList /> : <LoginForm onLogin={handleLogin} />
+      } */}
+      <TodoList />
     </div>
   );
 }
