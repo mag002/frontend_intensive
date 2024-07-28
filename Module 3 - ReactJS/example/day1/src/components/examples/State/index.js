@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import styles from './State.module.css'
-import styled from 'styled-components'
-import { Button } from '../../chat/LoginForm/LoginForm.styles';
+import styled from 'styled-components';
+import styles from './State.module.css';
 const StyledHeadingContainer = styled.div`
     border: 1px solid white;
     & > h1 {

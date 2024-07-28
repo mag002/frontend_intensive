@@ -1,7 +1,5 @@
 import styled from "styled-components"
-import AddInputContainer from "../AddInputContainer"
 import TodoContainer from "../TodoContainer"
-import TodoItem from "../TodoItem"
 
 const StyledCenterContainer = styled.div`
     height: 100vh;

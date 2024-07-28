@@ -1,5 +1,4 @@
-import { Button } from "../LoginForm/LoginForm.styles";
-import UserCard from "../UserCard"
+import UserCard from "../UserCard";
 
 function UserList() {
     // life cyles
