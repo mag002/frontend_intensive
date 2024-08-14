@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import './App.css';
-import TodoList from './components/todo-list/TodoList';
+import Timer from './components/examples/Timer';
 
 function App() {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -9,13 +10,32 @@ function App() {
   //   // Success
   //   setIsLoggedIn(true);
   // }
+  const [timers, setTimers] = useState([]);
+
+  const handleAddTimer = () => {
+    const newTimers = [...timers];
+    newTimers.push({
+      key: Date.now()
+    })
+    setTimers(newTimers)
+  }
+  const handleDeleteTimer = (key) => {
+    const newTimers = [...timers].filter(timer => timer.key !== key);
+    setTimers(newTimers)
+  }
+
   return (
     <div className="App">
       {/* CHAT */}
       {/* {
         true ? <UserList /> : <LoginForm onLogin={handleLogin} />
       } */}
-      <TodoList />
+      {/* <TodoList /> */}
+
+      <button onClick={handleAddTimer}>Add timer</button>
+      {
+        timers.map(({ key }) => <Timer key={key} createdAt={key} handleDeleteTimer={handleDeleteTimer} />)
+      }
     </div>
   );
 }
