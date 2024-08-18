@@ -3,9 +3,19 @@ import { useEffect, useRef, useState } from "react"
 function Timer({ createdAt, timers, handleDeleteTimer }) {
     const [count, setCount] = useState(0);
     const [running, setRunning] = useState(true);
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [todos, setTodods] = useState([])
+    //
     // setInterval
     //
-
+    //interval A [running:true, setCount]
+    // toggle runing
+    // interval A clear
+    // create Interval B [running: false]
+    // toggle running
+    // clear Interval B
+    // create interval C [running: true, setCount]
     useEffect(() => {
         console.log("EFFECT RUN")
         const interval = setInterval(() => {
@@ -21,11 +31,16 @@ function Timer({ createdAt, timers, handleDeleteTimer }) {
             console.log("UNMOUNT EFFECT")
             clearInterval(interval)
         }
-    }, [running])
+    }, [running]) // will unmount
 
-    useEffect(() => {
-        console.log('count increase', count)
-    }, [count])
+
+    // Level 1: call API to get the list (componentDidMount)
+    // Add spinner when call API 
+    // useEffect(()=>{},[])
+    // json-server|mock-json
+    // read update delete create => call api
+
+    // Level 2: useEffect(with depedencies) - depends on a flag -> when flag change -> Recall API / Refresh API
 
     // undefined - depends all
     // specific (count) - depends on 'count' state and only run when the re-render trigger by count

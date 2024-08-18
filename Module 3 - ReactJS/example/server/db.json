@@ -1,0 +1,18 @@
+{
+    "todos": [
+        {
+            "id": 1723974734295,
+            "name": "Placeholder 2",
+            "isDone": false,
+            "createdAtLabel": "18/08/2024 16:52",
+            "createdAt": 1723974734295
+        },
+        {
+            "id": 1723974730661,
+            "name": "Placeholder 1",
+            "isDone": false,
+            "createdAtLabel": "18/08/2024 16:52",
+            "createdAt": 1723974730661
+        }
+    ]
+}
