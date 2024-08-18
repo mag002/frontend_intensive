@@ -8,7 +8,7 @@ const StyledParagraph = styled(Typography)`
     display: flex;
     align-items: center;
 `
-
+// Presentaional component
 const TodoItem = ({ id, name, isDone, createdAt, handleUpdateTodo, handleDeleteTodo }) => {
     return <StyledGridBox id={id} >
         <Checkbox onChange={() => handleUpdateTodo(id)} inputProps={{ 'aria-label': 'Checkbox demo' }} checked={isDone} />

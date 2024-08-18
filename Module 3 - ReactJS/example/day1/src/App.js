@@ -1,54 +1,62 @@
-import { useState } from 'react';
 import './App.css';
-import Timer from './components/examples/Timer';
+import {
+  createBrowserRouter,
+  Route,
+  Link,
+  BrowserRouter,
+  Routes,
+} from "react-router-dom";
+import HomePage from './pages/HomePage';
+import ProductListPage from './pages/ProductListPage';
+import CartPage from './pages/CartPage';
+import Navbar from './components/ecommerce/Navbar';
+import ProductDetailPage from './pages/ProductDetailPage';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />
+  },
+  {
+    path: "/product",
+    element: <ProductListPage />
+  },
+  {
+    path: "/cart",
+    element: <CartPage />
+  },
+]);
+
+// HomePage (/) / ProductListPage (/product) / CartPage / (cart) 17:40
 
 function App() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const handleLogin = () => {
-  //   // Call API
-  //   // ... 
-  //   // Success
-  //   setIsLoggedIn(true);
-  // }
-  const [timers, setTimers] = useState([]);
-
-  const handleAddTimer = () => {
-    const newTimers = [...timers];
-    newTimers.push({
-      key: Date.now()
-    })
-    setTimers(newTimers)
-  }
-  const handleDeleteTimer = (key) => {
-    const newTimers = [...timers].filter(timer => timer.key !== key);
-    setTimers(newTimers)
-  }
-
+  // ProductListPage
+  // ProductDetailPage
+  // CartPage
   return (
-    <div className="App">
-      {/* CHAT */}
-      {/* {
-        true ? <UserList /> : <LoginForm onLogin={handleLogin} />
-      } */}
-      {/* <TodoList /> */}
-
-      <button onClick={handleAddTimer}>Add timer</button>
-      {
-        timers.map(({ key }) => <Timer key={key} createdAt={key} handleDeleteTimer={handleDeleteTimer} />)
-      }
+    <div>
+      {/* <RouterProvider router={router} /> */}
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product" element={<ProductListPage />} />
+          <Route path="/product/:productId" element={<ProductDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+    // Add cart button with total number
   );
 }
-// JSX - Javascript XML
-
-// - With import, when go to a folder path, it will automatically read an index.js file
-// - A js file with 'export default [something]
-// => You just need to name it when import
-
-
-//
-
-// - A JS file with multiple export, we need to destructuring and
-// select the thing we want to import
-// - We can import all from multiple export as an Object by using '* as yourVariableName'
 export default App;
+
+
+// [43: complete cart project - learn useContext]
+// [44: Start chat app - Typescript]
+// [45: Start chat app - Typescript]
+// [46: Start chat app - Typescript]
+// [47: Start chat app - unit test]
+// [48,49 legacy]
+// [50: Advanced knowledge: Code splitting, Performance, Test accessibility, Deployment]
+// [1b: FE mindset (Layout, unit testing, ...)]

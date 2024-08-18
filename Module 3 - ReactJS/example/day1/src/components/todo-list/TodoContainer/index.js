@@ -1,8 +1,8 @@
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import { Box, FormControl, FormControlLabel, FormLabel, Input, Radio, RadioGroup } from "@mui/material";
+import { Box, FormControl, FormControlLabel, FormLabel, Input, Radio, RadioGroup, CircularProgress } from "@mui/material";
 import Card from '@mui/material/Card';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getCurrentDateWithFormat } from "../../utils";
 import AddInputContainer from "../AddInputContainer";
 import StyledGridBox from "../StyledGridBox";
@@ -18,6 +18,8 @@ const TodoContainer = () => {
     //  Step 2: Render the Todo Item depends on listTodoState
     // 
 
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState('');
     const [todos, setTodos] = useState([])
     const [searchValue, setSearchValue] = useState("");
     const [sort, setSort] = useState({
@@ -30,6 +32,26 @@ const TodoContainer = () => {
 
     // add new object to the state depends on children input
 
+    const fetchTodos = async () => {
+        try {
+            const res = await fetch('http://localhost:3001/todos');
+            const data = await res.json();
+            setTodos(data);
+        } catch (e) {
+            setError(e.message)
+            console.log('e', e)
+        }
+        setIsLoading(false);
+    }
+
+
+
+    // Call the API
+    useEffect(() => {
+        if (isLoading) {
+            fetchTodos();
+        }
+    }, [isLoading])
 
     const titleList = [
         {
@@ -45,6 +67,7 @@ const TodoContainer = () => {
             label: 'Created at'
         }
     ]
+    // [17:10]
     const handleAddTodo = (taskName) => {
         const newTodos = [{
             id: Date.now(),
@@ -101,7 +124,16 @@ const TodoContainer = () => {
         }
     }
 
+    if (isLoading) {
+        return <CircularProgress />
+    }
+
+    if (error) {
+        return <h1>{error}</h1>
+    }
+
     return <Card raised sx={{ maxWidth: 800, minWidth: 275 }}>
+        <button onClick={() => setIsLoading(true)}>Reload data</button>
         <AddInputContainer handleAddTodo={handleAddTodo} />
         <hr />
         {/* <TodoItem />
