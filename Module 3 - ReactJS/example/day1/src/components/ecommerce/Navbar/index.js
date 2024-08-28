@@ -13,7 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom'
-
+import { Badge } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useCart } from '../../../hooks/cartContext';
 const pages = [
     {
         route: '/',
@@ -33,7 +35,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+    const { state: cart } = useCart();
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -149,11 +151,14 @@ function Navbar() {
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
+                            <Badge badgeContent={cart.length} color="secondary">
+                                <ShoppingCartIcon />
+                            </Badge>
+                            {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+
+                            </IconButton> */}
                         </Tooltip>
-                        <Menu
+                        {/* <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
                             anchorEl={anchorElUser}
@@ -174,7 +179,7 @@ function Navbar() {
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
                             ))}
-                        </Menu>
+                        </Menu> */}
                     </Box>
                 </Toolbar>
             </Container>

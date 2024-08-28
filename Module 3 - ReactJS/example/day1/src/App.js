@@ -11,6 +11,9 @@ import ProductListPage from './pages/ProductListPage';
 import CartPage from './pages/CartPage';
 import Navbar from './components/ecommerce/Navbar';
 import ProductDetailPage from './pages/ProductDetailPage';
+import { useState, createContext, useContext } from "react";
+import { CartContext, CartProvider } from './hooks/cartContext';
+
 
 const router = createBrowserRouter([
   {
@@ -35,16 +38,19 @@ function App() {
   // CartPage
   return (
     <div>
-      {/* <RouterProvider router={router} /> */}
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product" element={<ProductListPage />} />
-          <Route path="/product/:productId" element={<ProductDetailPage />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        {/* <RouterProvider router={router} /> */}
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product" element={<ProductListPage />} />
+            <Route path="/product/:productId" element={<ProductDetailPage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
+
     </div>
     // Add cart button with total number
   );
