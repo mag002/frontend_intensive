@@ -1,55 +1,85 @@
-// File: server.js
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors');
 const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: "*", // Allow all origins for simplicity
+        origin: "*", // Allowing all origins for simplicity
         methods: ["GET", "POST"]
     }
 });
 
 app.use(cors());
+app.use('/avatars', express.static(path.join(__dirname, 'avatars')));
 
-let users = require('./users.json');
-let messages = require('./messages.json');
+const USERS_FILE = './users.json';
+const MESSAGES_FILE = './messages.json';
+
+// Load initial data from JSON files
+let users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
+let messages = JSON.parse(fs.readFileSync(MESSAGES_FILE, 'utf8'));
+
+const avatars = [
+    '/avatars/avatar1.png',
+    '/avatars/avatar2.png',
+    '/avatars/avatar3.png',
+    '/avatars/avatar4.png',
+    '/avatars/avatar5.png',
+    '/avatars/avatar6.png',
+    '/avatars/avatar7.png',
+    '/avatars/avatar8.png',
+    '/avatars/avatar9.png',
+];
 
 io.on('connection', (socket) => {
     console.log('A user connected');
 
-    socket.on('login', (userId) => {
-        const user = users.find(u => u.id === userId);
-        if (user) {
-            user.online = true;
-            socket.user = user;
-            io.emit('usersList', users.filter(u => u.online));
-        }
+    socket.on('login', ({ userName }) => {
+        const userId = uuidv4();
+        const avatar = avatars[Math.floor(Math.random() * avatars.length)];
+        const newUser = {
+            id: userId,
+            name: userName,
+            avatar: avatar,
+            status: 'online'
+        };
+
+        users.push(newUser);
+        fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2)); // Save to file
+        socket.user = newUser;
+        socket.emit('loginSuccess', newUser);
+        io.emit('usersList', users);
     });
 
     socket.on('getUsers', () => {
-        socket.emit('usersList', users.filter(u => u.online));
+        socket.emit('usersList', users.filter(u => u.id !== socket.user?.id));
     });
 
-    socket.on('getMessages', () => {
-        socket.emit('messageList', messages);
+    socket.on('getMessages', ({ from, to }) => {
+        const filteredMessages = messages.filter(msg => (msg.from === from && msg.to === to) || (msg.from === to && msg.to === from));
+        socket.emit('messageList', filteredMessages);
     });
 
-    socket.on('sendMessage', (message) => {
-        messages.push(message);
-        fs.writeFileSync('./messages.json', JSON.stringify(messages));
-        io.emit('newMessage', message);
+    socket.on('sendMessage', ({ from, to, text }) => {
+        console.log('message', { from, to, text })
+        const newMessage = { from, to, text };
+        messages.push(newMessage);
+        fs.writeFileSync(MESSAGES_FILE, JSON.stringify(messages, null, 2)); // Save to file
+        io.emit('newMessage', newMessage);
     });
 
     socket.on('disconnect', () => {
         if (socket.user) {
             console.log(`${socket.user.name} disconnected`);
-            socket.user.online = false;
-            io.emit('usersList', users.filter(u => u.online));
+            users = users.filter(u => u.id !== socket.user.id);
+            fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2)); // Update file on disconnect
+            io.emit('usersList', users);
         }
     });
 });
