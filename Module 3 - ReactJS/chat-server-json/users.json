@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Alice",
+        "age": 25,
+        "avatar": "avatar1.png",
+        "status": "online"
+    },
+    {
+        "id": 2,
+        "name": "Bob",
+        "age": 30,
+        "avatar": "avatar2.png",
+        "status": "offline"
+    }
+]
