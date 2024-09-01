@@ -1,0 +1,75 @@
+[
+  {
+    "id": "1",
+    "from": "user1",
+    "to": "user2",
+    "text": "Hello from User 1 to User 2!"
+  },
+  {
+    "id": "2",
+    "from": "user2",
+    "to": "user1",
+    "text": "Hello back to User 1 from User 2!"
+  },
+  {
+    "from": "66i5Ny7VJIK9A2FmAAAL",
+    "to": "User_Patrick_1725177890845",
+    "text": "Hi"
+  },
+  {
+    "from": "X-p4zM8Vr9tTk5zjAAAN",
+    "to": "User_Peter_1725177894937",
+    "text": "ok"
+  },
+  {
+    "from": "X-p4zM8Vr9tTk5zjAAAN",
+    "to": "User_Peter_1725177894937",
+    "text": "abc"
+  },
+  {
+    "from": "66i5Ny7VJIK9A2FmAAAL",
+    "to": "User_Patrick_1725177890845",
+    "text": "a"
+  },
+  {
+    "from": "66i5Ny7VJIK9A2FmAAAL",
+    "to": "User_Patrick_1725177890845",
+    "text": "a"
+  },
+  {
+    "from": "y2ARDkLEE8GVJ5DCAAAC",
+    "to": "User_B_1725178063131",
+    "text": "1"
+  },
+  {
+    "from": "ZCEO5nvyylTUDN7bAAAD",
+    "to": "User_A_1725178061041",
+    "text": "B"
+  },
+  {
+    "text": "ok"
+  },
+  {
+    "text": "c"
+  },
+  {
+    "from": "009702ab-1982-41af-82c4-f63245f0532b",
+    "to": "009702ab-1982-41af-82c4-f63245f0532b",
+    "text": "1"
+  },
+  {
+    "from": "e47aea0b-c206-4256-acbe-762868e292bc",
+    "to": "e47aea0b-c206-4256-acbe-762868e292bc",
+    "text": "2"
+  },
+  {
+    "from": "62033e42-740f-470f-a902-2b79be63a2c0",
+    "to": "62033e42-740f-470f-a902-2b79be63a2c0",
+    "text": "1"
+  },
+  {
+    "from": "40cf5939-868c-4be2-9ad1-138ecb6ace5b",
+    "to": "40cf5939-868c-4be2-9ad1-138ecb6ace5b",
+    "text": "2"
+  }
+]
