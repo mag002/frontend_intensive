@@ -65,13 +65,21 @@ io.on('connection', (socket) => {
         const filteredMessages = messages.filter(msg => (msg.from === from && msg.to === to) || (msg.from === to && msg.to === from));
         socket.emit('messageList', filteredMessages);
     });
-
+    // 17:52
     socket.on('sendMessage', ({ from, to, text }) => {
         console.log('message', { from, to, text })
         const newMessage = { from, to, text };
         messages.push(newMessage);
         fs.writeFileSync(MESSAGES_FILE, JSON.stringify(messages, null, 2)); // Save to file
         io.emit('newMessage', newMessage);
+
+        // New message sent => all user connect to socket will receive the whole chat history of them
+
+        // New message sent => all user connect to socket will receive a new message
+
+        // const filteredMessages = messages.filter(msg => (msg.from === from && msg.to === to) || (msg.from === to && msg.to === from));
+        // io.emit('messageList', filteredMessages);
+
     });
 
     socket.on('disconnect', () => {

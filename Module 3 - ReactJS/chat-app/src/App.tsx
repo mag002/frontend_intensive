@@ -1,22 +1,19 @@
 import { useEffect, useState } from 'react';
 import Login from './components/Login';
 import socketIOClient from 'socket.io-client'
+import { User } from './types';
+import UserList from './components/UserList';
+import { ENDPOINT } from './utils/constant';
+import ChatContainer from './components/ChatContainer';
 
-const ENDPOINT = "http://localhost:4000";
 const socket = socketIOClient(ENDPOINT);
 
-interface User {
-  id: string,
-  avatar: string,
-  name: string,
-  status: 'online' | 'offline'
-}
 
 // function App({handleLogin}:{handleLogin:()=>void}) {
 function App() {
-  const [count, setCount] = useState<number>(0);
   const [userList, setUserList] = useState<Array<User>>([])
   const [currentUser, setCurrentUser] = useState<User>();
+  const [selectedUser, setSelectedUser] = useState<User>();
 
   // access to Chat app  => user open the app => App.tsx loaded
   // => connect to server through socket.io first time (and only 1 time)
@@ -62,10 +59,13 @@ function App() {
   return (
     <>
       {!currentUser ? <Login handleLogin={handleLogin} />
-        : userList.map(user => <div>
-          <img className="rounded-xlg w-2/12" src={ENDPOINT + user.avatar} />
-          <p>{user.name}</p>
-        </div>)}
+        :
+        <div className='flex'>
+          <UserList currentUser={currentUser} selectedUser={selectedUser} handleSelectUser={setSelectedUser} userList={userList} />
+          <ChatContainer userList={userList} socket={socket} selectedUser={selectedUser} currentUser={currentUser} />
+        </div>
+
+      }
     </>
   )
 }

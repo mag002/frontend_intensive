@@ -1,32 +1,32 @@
 [
   {
-    "id": "a71a95f4-4cd5-4841-9976-78d2536e3329",
-    "name": "A",
-    "avatar": "avatar3.png",
-    "status": "online"
-  },
-  {
-    "id": "7a242bcf-f80c-4e3b-b4ca-6bf2860dd478",
-    "name": "B",
-    "avatar": "avatar1.png",
-    "status": "online"
-  },
-  {
-    "id": "62033e42-740f-470f-a902-2b79be63a2c0",
-    "name": "C",
-    "avatar": "avatar2.png",
-    "status": "online"
-  },
-  {
     "id": "f369b66e-1002-41d8-81e2-29d3dfa7f990",
-    "name": "A",
+    "name": "Example A",
     "avatar": "/avatars/avatar3.png",
     "status": "online"
   },
   {
     "id": "d18b1b90-d47f-45c2-92be-2af7863bc009",
-    "name": "E",
+    "name": "Example B",
     "avatar": "/avatars/avatar2.png",
+    "status": "online"
+  },
+  {
+    "id": "797e4194-9e80-4ea8-aa0d-9e7ec6ab865a",
+    "name": "Patrick",
+    "avatar": "/avatars/avatar7.png",
+    "status": "online"
+  },
+  {
+    "id": "3a998fdc-c8eb-44c2-a485-8ca1e24fe244",
+    "name": "Jason",
+    "avatar": "/avatars/avatar5.png",
+    "status": "online"
+  },
+  {
+    "id": "bea79437-dffb-41e0-bcb1-544414068b68",
+    "name": "Sabrina",
+    "avatar": "/avatars/avatar7.png",
     "status": "online"
   }
 ]
