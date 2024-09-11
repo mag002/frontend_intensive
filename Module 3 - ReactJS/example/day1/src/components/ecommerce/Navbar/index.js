@@ -16,6 +16,8 @@ import { Link } from 'react-router-dom'
 import { Badge } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from '../../../hooks/cartContext';
+import { logout } from '../../../services/authServices';
+import { useNavigate } from 'react-router-dom'
 const pages = [
     {
         route: '/',
@@ -28,6 +30,10 @@ const pages = [
     {
         route: '/cart',
         label: 'Cart'
+    },
+    {
+        route: '/me',
+        label: 'User Profile'
     }
 ]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -36,6 +42,7 @@ function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const { state: cart } = useCart();
+    const navigate = useNavigate();
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -50,7 +57,12 @@ function Navbar() {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
-
+    const handleLogOut = () => {
+        logout()
+        // navigate('/')
+        window.location.reload()
+        return
+    }
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
@@ -151,14 +163,14 @@ function Navbar() {
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
-                            <Badge badgeContent={cart.length} color="secondary">
+                            <Badge onClick={handleOpenUserMenu} badgeContent={cart.length} color="secondary">
                                 <ShoppingCartIcon />
                             </Badge>
-                            {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
 
-                            </IconButton> */}
+                            </IconButton>
                         </Tooltip>
-                        {/* <Menu
+                        <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
                             anchorEl={anchorElUser}
@@ -174,12 +186,10 @@ function Navbar() {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu> */}
+                            <MenuItem onClick={handleLogOut}>
+                                <Typography textAlign="center">Logout</Typography>
+                            </MenuItem>
+                        </Menu>
                     </Box>
                 </Toolbar>
             </Container>
