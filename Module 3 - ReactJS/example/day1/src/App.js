@@ -77,7 +77,7 @@ export default App;
 // [45: Start chat app - Typescript]
 // [46: Start chat app - Typescript]
 // [47: Start chat app - jwt, unit test with ecommerce]
-// [48: Advanced knowledge: Code splitting, Performance, Test accessibility, Deployment]
+// [48: Advanced knowledge: Code splitting, Performance (useMemo, useCallBack), Test accessibility, Deployment]
 // [49,50 legacy]
 
 // [1b: FE mindset (Layout, unit testing, ...)]

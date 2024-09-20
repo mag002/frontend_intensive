@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+/* board status squareContainer */
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  WIDTH: 100vw;
+  flex-direction: column;
+}
+
+
+.status {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.squareContainer {
+  display: grid;
+  width: 600px;
+  height: 600px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.square {
+  border: 1px solid white;
+  font-size: 3rem;
+  color: lightblue;
+}
+
+.isX {
+  color: lightcoral
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
